@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurpassDataPopulator.Console", "SurpassDataPopulator.Console\SurpassDataPopulator.Console.csproj", "{38C15FBE-821C-4AD2-995B-6DE84C4AC47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurpassDataPopulator.Domain", "SurpassDataPopulator.Domain\SurpassDataPopulator.Domain.csproj", "{4C2A6BE5-2AEE-49CF-92D5-3B16CB212B55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurpassDataPopulator.Application", "SurpassDataPopulator.Application\SurpassDataPopulator.Application.csproj", "{E7D6FEC3-C5ED-4555-B23D-592B4C06B420}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2982E14F-E638-4955-B88A-1706F84C3830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurpassDataPopulator.Infrastructure", "SurpassDataPopulator.Infrastructure\SurpassDataPopulator.Infrastructure.csproj", "{05396415-07AD-4709-B28E-90D712E82769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurpassDataPopulator.Infrastructure.SurpassApiSdk", "SurpassDataPopulator.Infrastructure.SurpassApiSdk\SurpassDataPopulator.Infrastructure.SurpassApiSdk.csproj", "{B0DE75A0-CD9B-4BAA-96D1-1C0D7479E974}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38C15FBE-821C-4AD2-995B-6DE84C4AC47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C15FBE-821C-4AD2-995B-6DE84C4AC47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C15FBE-821C-4AD2-995B-6DE84C4AC47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C15FBE-821C-4AD2-995B-6DE84C4AC47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2A6BE5-2AEE-49CF-92D5-3B16CB212B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2A6BE5-2AEE-49CF-92D5-3B16CB212B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2A6BE5-2AEE-49CF-92D5-3B16CB212B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2A6BE5-2AEE-49CF-92D5-3B16CB212B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D6FEC3-C5ED-4555-B23D-592B4C06B420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D6FEC3-C5ED-4555-B23D-592B4C06B420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D6FEC3-C5ED-4555-B23D-592B4C06B420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D6FEC3-C5ED-4555-B23D-592B4C06B420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05396415-07AD-4709-B28E-90D712E82769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05396415-07AD-4709-B28E-90D712E82769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05396415-07AD-4709-B28E-90D712E82769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05396415-07AD-4709-B28E-90D712E82769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DE75A0-CD9B-4BAA-96D1-1C0D7479E974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DE75A0-CD9B-4BAA-96D1-1C0D7479E974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DE75A0-CD9B-4BAA-96D1-1C0D7479E974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DE75A0-CD9B-4BAA-96D1-1C0D7479E974}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
