@@ -65,9 +65,11 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass
                 //Assign each tag to the item
                 foreach (var tag in value.Tags)    
                 {
+                    if(tag.Value == null) continue;
+                    
                     //Find the tagGroupId and tagValueId to assign for each item
                     var tagGroupId = tagGroupLookup[tag.Name];
-                    var tagValueId = tagValueLookup[tag.Name + "-" + tag.Value];
+                    var tagValueId = tagValueLookup[$"{tag.Name}-{tag.Value}"];
                     var itemTagValue = new ItemTagValueInputResource
                     {
                         TagGroup = new TagGroupResource { Id = tagGroupId },
@@ -86,7 +88,7 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass
             Dictionary<string, long> tagGroupLookup, string subjectReference)
         {
             //Get the current tag values in the subject.
-            //TODO Get current tag values ana make sure we dont remake any that already exist.
+            //TODO Get current tag values and make sure we dont remake any that already exist.
             var tagValuesInSubject = await _surpassV2Api.TagValuesInSubject(subjectReference);
             var currentSubjectTagValues = new Dictionary<string, long>(); //tagValuesInSubject.Response.ToDictionary(x => x.TagValue, x => x.Id.Value);
 
@@ -100,6 +102,8 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass
             var tagValueLookup = new Dictionary<string, long>();
             foreach (var requiredTagValue in requiredTagValues)
             {
+                if(requiredTagValue.Value == null) continue;
+                
                 var tagGroupId = tagGroupLookup[requiredTagValue.Name];
                     
                 var tagValue = new TagValueInputResource
@@ -114,7 +118,7 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass
                 if (response.Errors != null && response.Errors.Any()) throw new Exception($"Error(s) while creating the tag value: {response.Errors.Humanize()}");
                 if (response.Id == null) throw new Exception($"Error(s) while creating the tag value. Response Id was null");
                 var tagValueId = response.Id.Value;
-                tagValueLookup.Add(requiredTagValue.Name + "-" + requiredTagValue.Value, tagValueId);
+                tagValueLookup.Add($"{requiredTagValue.Name}-{requiredTagValue.Value}", tagValueId);
             }
 
             return tagValueLookup;

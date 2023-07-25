@@ -64,7 +64,7 @@ namespace SurpassDataPopulator.Console
                 .ReadFrom.Configuration(configuration)
                 .CreateBootstrapLogger();
             
-            Log.Information("Starting up..");
+            Log.Information("Starting..");
 
             return configuration;
         }

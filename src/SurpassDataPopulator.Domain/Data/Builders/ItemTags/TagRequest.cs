@@ -8,9 +8,10 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
 {
     public class TagRequest : ITagRequest
     {
-        private string _name;
         private string _value;
         private Func<Item, string> _generationFunc;
+        
+        public string Name { get; private set; }
 
         public TagRequest(string nameAndValue)
         {
@@ -29,11 +30,11 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
         {
             SetValues(name, value);
         }
-        
+
         private void SetValues(string name, string value, Func<Item, string> generationFunc = null)
         {
             _value = value;
-            _name = name;
+            Name = name;
             _generationFunc = generationFunc;
         }
 
@@ -41,7 +42,7 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
         {
             return new Tag
             {
-                Name = _name,
+                Name = Name,
                 Value = _value ?? _generationFunc.Invoke(context)
             };
         }

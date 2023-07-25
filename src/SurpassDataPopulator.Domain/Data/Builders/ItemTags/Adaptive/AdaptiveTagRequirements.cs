@@ -17,7 +17,9 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags.Adaptive
                     new TagRequest(AdaptiveTagNames.Curriculum, i => i.Category),
                     new TagRequest(AdaptiveTagNames.DifficultyScale, GetAdaptiveDifficulty),
                     new TagRequest(AdaptiveTagNames.DifficultyScaleDi, "0"),
-                    new TagRequest(AdaptiveTagNames.DifficultyScaleGuess, "0")
+                    new TagRequest(AdaptiveTagNames.DifficultyScaleGuess, "0"),
+                    new TagRequest(AdaptiveTagNames.MasterId, _ => null),
+                    new TagRequest(AdaptiveTagNames.Language, _ => null)
                 };
             }
         }

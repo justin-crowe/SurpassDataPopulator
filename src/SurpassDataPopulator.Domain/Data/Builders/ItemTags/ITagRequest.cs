@@ -5,6 +5,7 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
 {
     public interface ITagRequest
     {
+        string Name { get; }
         Tag Build(Item context);
     }
 }

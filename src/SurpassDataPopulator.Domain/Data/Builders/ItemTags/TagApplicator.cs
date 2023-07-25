@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using SurpassDataPopulator.Domain.Entities.Items;
 
@@ -10,6 +11,12 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
         {
             foreach (var requestedTag in requestedTags.Requirements)
             {
+                //if the requested name tag already exists, then override it with the new one
+                var existingTag = item.Tags.FirstOrDefault(t => t.Name == requestedTag.Name);
+                if (existingTag != null)
+                {
+                    item.Tags.Remove(existingTag);
+                }
                 item.Tags.Add(requestedTag.Build(item));
             }
         }
