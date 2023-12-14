@@ -40,11 +40,9 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
 
         public Tag Build(Item context)
         {
-            return new Tag
-            {
-                Name = Name,
-                Value = _value ?? _generationFunc.Invoke(context)
-            };
+            var value = _value ?? _generationFunc.Invoke(context);
+
+            return new Tag(Name, value);
         }
     }
 }

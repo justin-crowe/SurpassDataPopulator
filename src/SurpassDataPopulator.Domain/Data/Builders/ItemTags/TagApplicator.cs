@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using SurpassDataPopulator.Domain.Entities.Items;
 
@@ -17,7 +18,11 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
                 {
                     item.Tags.Remove(existingTag);
                 }
-                item.Tags.Add(requestedTag.Build(item));
+
+                var tag = requestedTag.Build(item);
+                if (string.IsNullOrEmpty(tag.Value)) continue;
+            
+                item.Tags.Add(tag);
             }
         }
         

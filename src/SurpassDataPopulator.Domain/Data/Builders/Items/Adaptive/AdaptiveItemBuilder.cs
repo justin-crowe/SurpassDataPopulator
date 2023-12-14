@@ -50,11 +50,6 @@ namespace SurpassDataPopulator.Domain.Data.Builders.Items.Adaptive
             _tagApplicator.Apply(item, new GeneralTagRequirement(
                 new TagRequest(AdaptiveTagNames.MasterId, variantLinkage)));
 
-            //Add a stem to help debugging language variants if needed
-            var languageVariantLinkageStem =
-                $"<p><i>Language Variants '{string.Join(',', languageVariants)}' with {AdaptiveTagNames.MasterId}: {variantLinkage}</i></p>";
-            item.QuestionText.Add(languageVariantLinkageStem);
-
             //Create copies for each additional lang variant/code
             for (var i = 1; i < languageVariants.Count; i++)
             {
@@ -71,8 +66,22 @@ namespace SurpassDataPopulator.Domain.Data.Builders.Items.Adaptive
 
             //Add the variant tag linkage to the original item
             var originalLanguageCode = languageVariants.First();
-            var originalLanguageStem = CreateLanguageStem(originalLanguageCode);
-            item.QuestionText.Add(originalLanguageStem);
+            
+            //add a table to show the linkage between the variants
+            var languageVariantsLinkageTable = 
+                $"<table border=\"2\" style=\"width:100%\">" +
+                $"  <thead>" +
+                $"      <tr><th colspan=\"3\">Language Variants</th></tr>" +
+                $"  </thead>" +
+                $"  <tbody>" +
+                $"      <tr><td>Language Variants List</td><td>{string.Join(',', languageVariants)}</td></tr>" +
+                $"      <tr><td>This Item LanguageCode</td><td>{originalLanguageCode}</td></tr>" +
+                $"      <tr><td>{AdaptiveTagNames.MasterId}</td><td><i>{variantLinkage}</i></td></tr>" +
+                $"  </tbody>" +
+                $"</table>";
+            
+            item.QuestionText.Add(languageVariantsLinkageTable);
+            
             _tagApplicator.Apply(item, new GeneralTagRequirement(
                 new TagRequest(AdaptiveTagNames.Language, originalLanguageCode)));
         }

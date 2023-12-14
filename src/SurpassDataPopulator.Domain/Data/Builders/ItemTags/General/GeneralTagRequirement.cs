@@ -8,5 +8,7 @@ public class GeneralTagRequirement : ITagRequirements
     {
         Requirements = new List<ITagRequest> {request};
     }
+
+    public string Type => "General";
     public List<ITagRequest> Requirements { get; }
 }

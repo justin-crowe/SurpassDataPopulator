@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using SurpassDataPopulator.Domain.Data.Builders.Items;
 using SurpassDataPopulator.Domain.Entities.Items;
 using SurpassDataPopulator.Domain.Entities.Items.QuestionTypes.EitherOr;
@@ -79,7 +80,7 @@ namespace SurpassDataPopulator.Infrastructure.Services.OpenTriviaApi.Mapping
             var spoiler = 
                 "<hr/>" +
                 "<p align=\"right\">Answer:</p>" +
-                $"<p align=\"right\"><sub>{question.CorrectAnswer}</sub></p>" +
+                $"<p align=\"right\"><i>{question.CorrectAnswer}</i></p>" +
                 "<hr/>";
                 
             stems.Add(spoiler);

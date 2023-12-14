@@ -10,6 +10,7 @@ using SurpassApiSdk.DataContracts.Item.Details.Items;
 using SurpassDataPopulator.Domain.Entities.Items;
 using SurpassDataPopulator.Domain.Entities.Items.QuestionTypes.EitherOr;
 using SurpassDataPopulator.Domain.Entities.Items.QuestionTypes.MultipleChoice;
+using SurpassDataPopulator.Domain.Entities.Tags;
 
 namespace SurpassDataPopulator.Infrastructure.Services.Surpass.Mapping
 {
@@ -87,6 +88,8 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass.Mapping
                 stems.Append($"{questionText}");
             }
             
+            AddTagsDescriptionToStem(stems, item.Tags);
+
             return new ItemInputResource
             {
                 Subject = new ItemSubjectResource
@@ -98,11 +101,23 @@ namespace SurpassDataPopulator.Infrastructure.Services.Surpass.Mapping
                     Id = (int) folderId,
                     Position = position
                 },
+                //StemComponents = item.QuestionText.Select(questionText => new MultimediaComponentResource { Text = questionText }).ToList(),
                 QuestionText = stems.ToString(),
                 Name = $"{item.Category.Dehumanize()} - item {Guid.NewGuid().ToString("N")} - {item.Difficulty} Difficulty",
                 Mark = item.Mark,
                 ItemKind = ItemKind.Question,
             };
+        }
+
+        private static void AddTagsDescriptionToStem(StringBuilder stems, List<Tag> itemTags)
+        {
+            // Add a table for all tags
+            stems.Append($"<br/><table border=\"2\" style=\"width:100%\"><thead><tr><th colspan=\"2\">Tags</th></tr></thead><tbody>");
+            foreach (var tag in itemTags)
+            {
+                stems.Append($"<tr><td>{tag.Name}</td><td>{tag.Value}</td></tr>");
+            }
+            stems.Append("</tbody></table>");
         }
     }
 }
