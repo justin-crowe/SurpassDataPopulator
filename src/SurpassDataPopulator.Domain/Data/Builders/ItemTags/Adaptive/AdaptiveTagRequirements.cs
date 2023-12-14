@@ -8,6 +8,8 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags.Adaptive
 {
     public class AdaptiveTagRequirements : ITagRequirements
     {
+        public string Type => "Adaptive";
+
         public List<ITagRequest> Requirements
         {
             get
@@ -16,7 +18,7 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags.Adaptive
                 {
                     new TagRequest(AdaptiveTagNames.Curriculum, i => i.Category),
                     new TagRequest(AdaptiveTagNames.DifficultyScale, GetAdaptiveDifficulty),
-                    new TagRequest(AdaptiveTagNames.DifficultyScaleDi, "0"),
+                    new TagRequest(AdaptiveTagNames.DifficultyScaleDi, "1"),
                     new TagRequest(AdaptiveTagNames.DifficultyScaleGuess, "0"),
                     new TagRequest(AdaptiveTagNames.MasterId, _ => null),
                     new TagRequest(AdaptiveTagNames.Language, _ => null)
