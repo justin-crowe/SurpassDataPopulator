@@ -18,11 +18,8 @@ namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
                 {
                     item.Tags.Remove(existingTag);
                 }
-
-                var tag = requestedTag.Build(item);
-                if (string.IsNullOrEmpty(tag.Value)) continue;
             
-                item.Tags.Add(tag);
+                item.Tags.Add(requestedTag.Build(item));
             }
         }
         

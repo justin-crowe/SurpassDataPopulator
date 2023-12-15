@@ -54,10 +54,8 @@ namespace SurpassDataPopulator.Domain.Data.Builders.Items.Adaptive
             for (var i = 1; i < languageVariants.Count; i++)
             {
                 var languageVariant = languageVariants[i];
-                var languageVariantStem = CreateLanguageStem(languageVariant);
 
                 var copy = item.DeepCopy();
-                copy.QuestionText.Add(languageVariantStem);
                 _tagApplicator.Apply(copy, new GeneralTagRequirement(
                     new TagRequest(AdaptiveTagNames.Language, languageVariant)));
 
@@ -84,11 +82,6 @@ namespace SurpassDataPopulator.Domain.Data.Builders.Items.Adaptive
             
             _tagApplicator.Apply(item, new GeneralTagRequirement(
                 new TagRequest(AdaptiveTagNames.Language, originalLanguageCode)));
-        }
-
-        private static string CreateLanguageStem(string originalLanguageCode)
-        {
-            return $"<p><i>This item LanguageCode: {originalLanguageCode}</i></p>";
         }
     }
 }
