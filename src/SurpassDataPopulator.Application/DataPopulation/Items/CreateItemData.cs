@@ -11,4 +11,7 @@ public class CreateItemData : IRequest
     public IEnumerable<int> Category { get; set; }
     public bool ShowCorrectAnswer { get; set; }
     public IEnumerable<TagRequest> Tags { get; set; }
+    public string MediaFolder { get; set; }
+    public int NumberOfMediaItemsPerItem { get; set; }
+    public bool FixedNumberOfMediaPerItem { get; set; }
 }

@@ -20,9 +20,9 @@
 
     <ItemGroup>
       <Folder Include="Common\Exceptions" />
-      <Folder Include="Data\Builders" />
       <Folder Include="Data\Populators" />
       <Folder Include="Entities\Items\QuestionTypes\ItemType" />
+      <Folder Include="Entities\Media\Video\" />
     </ItemGroup>
 
 </Project>
