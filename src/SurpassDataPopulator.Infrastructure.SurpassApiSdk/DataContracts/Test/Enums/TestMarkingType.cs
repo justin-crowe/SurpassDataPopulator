@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum TestMarkingType
 {
-    public enum TestMarkingType
-    {
-        StandardMarking = 0,
-        Psychometric = 1
-    }
+    StandardMarking = 0,
+    Psychometric = 1
 }

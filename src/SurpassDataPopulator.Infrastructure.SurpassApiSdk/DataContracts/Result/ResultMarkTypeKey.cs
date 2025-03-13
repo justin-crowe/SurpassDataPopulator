@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Result
+﻿namespace SurpassApiSdk.DataContracts.Result;
+
+public enum ResultMarkTypeKey
 {
-    public enum ResultMarkTypeKey
-    {
-        Mark = 0,
-        Percentage = 1,
-        IrtTheta = 2
-    }
+    Mark = 0,
+    Percentage = 1,
+    IrtTheta = 2
 }

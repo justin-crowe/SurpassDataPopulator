@@ -1,10 +1,9 @@
 ﻿using SurpassApiSdk.DataContracts.AnalyticsScaleScoreMappingResult;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IAnalyticsScaleScoreMappingController
 {
-    public interface IAnalyticsScaleScoreMappingController
-    {
-        TimeZonePageResponse<AnalyticsScaleScoreMappingDetailedResource> Get(int id);
-    }
+    TimeZonePageResponse<AnalyticsScaleScoreMappingDetailedResource> Get(int id);
 }

@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum TestType
 {
-    public enum TestType
-    {
-        ComputerBasedTest = 0,
-        ComputerBasedProject = 1
-    }
+    ComputerBasedTest = 0,
+    ComputerBasedProject = 1
 }

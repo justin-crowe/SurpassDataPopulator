@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum SecureClientMode
 {
-    public enum SecureClientMode
-    {
-        Unlocked = 0,
-        Locked = 1
-    }
+    Unlocked = 0,
+    Locked = 1
 }

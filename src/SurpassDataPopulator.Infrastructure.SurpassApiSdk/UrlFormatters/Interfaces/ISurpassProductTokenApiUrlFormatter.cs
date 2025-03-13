@@ -1,9 +1,8 @@
 ﻿using SurpassApiSdk.DataContracts.ProductToken;
 
-namespace SurpassApiSdk.UrlFormatters.Interfaces
+namespace SurpassApiSdk.UrlFormatters.Interfaces;
+
+internal interface ISurpassProductTokenApiUrlFormatter
 {
-    internal interface ISurpassProductTokenApiUrlFormatter
-    {
-        string GetForTypeWithTab(ProductType productType, ProductTabType productTab);
-    }
+    string GetForTypeWithTab(ProductType productType, ProductTabType productTab);
 }

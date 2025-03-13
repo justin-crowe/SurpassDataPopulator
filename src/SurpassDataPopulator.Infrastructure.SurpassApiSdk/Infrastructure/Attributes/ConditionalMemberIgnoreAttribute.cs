@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.Infrastructure.Attributes
+﻿namespace SurpassApiSdk.Infrastructure.Attributes;
+
+[AttributeUsage(AttributeTargets.Property)]
+public sealed class ConditionalMemberIgnoreAttribute : Attribute
 {
-    [AttributeUsage(AttributeTargets.Property)]
-    public sealed class ConditionalMemberIgnoreAttribute : Attribute
-    {
-    }
 }

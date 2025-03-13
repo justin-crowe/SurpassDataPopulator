@@ -4,13 +4,12 @@ using SurpassApiSdk.DataContracts.User;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.Task.General
+namespace SurpassApiSdk.DataContracts.Task.General;
+
+[DataContract(Name = ApiConsts.Contracts.GeneralTask, Namespace = "")]
+[ControllerName(ApiConsts.Segments.GeneralTask, 2)]
+public class GeneralTaskDetailedSlimResource : TaskDetailedSlimResource
 {
-    [DataContract(Name = ApiConsts.Contracts.GeneralTask, Namespace = "")]
-    [ControllerName(ApiConsts.Segments.GeneralTask, 2)]
-    public class GeneralTaskDetailedSlimResource : TaskDetailedSlimResource
-    {
-        [DataMember(Name = ApiConsts.Members.TaskExecutor, Order = 10)]
-        public UserResource Executor { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.TaskExecutor, Order = 10)]
+    public UserResource Executor { get; set; }
 }

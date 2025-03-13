@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Item.Enums
+﻿namespace SurpassApiSdk.DataContracts.Item.Enums;
+
+public enum ItemQuestionContentType
 {
-    public enum ItemQuestionContentType
-    {
-        RichText = 0,
-        MathMl = 1
-    }
+    RichText = 0,
+    MathMl = 1
 }

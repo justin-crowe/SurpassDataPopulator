@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Task
+﻿namespace SurpassApiSdk.DataContracts.Task;
+
+public enum TaskStatus
 {
-    public enum TaskStatus
-    {
-        NotStarted = 0,
-        InProgress = 1,
-        Completed = 2
-    }
+    NotStarted = 0,
+    InProgress = 1,
+    Completed = 2
 }

@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
+
+internal interface ISurpassBasicPageApiUrlFormatter : ISurpassApiUrlFormatter
 {
-    internal interface ISurpassBasicPageApiUrlFormatter : ISurpassApiUrlFormatter
-    {
-        string GetForIdAssistiveId(long id, long assistiveId);
-    }
+    string GetForIdAssistiveId(long id, long assistiveId);
 }

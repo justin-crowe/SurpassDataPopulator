@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Task
+﻿namespace SurpassApiSdk.DataContracts.Task;
+
+public enum DeleteRecommendation
 {
-    public enum DeleteRecommendation
-    {
-        RemoveAll = 0,
-        RemoveThis = 1
-    }
+    RemoveAll = 0,
+    RemoveThis = 1
 }

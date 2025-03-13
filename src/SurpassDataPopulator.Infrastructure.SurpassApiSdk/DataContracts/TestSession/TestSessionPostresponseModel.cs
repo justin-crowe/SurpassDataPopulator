@@ -3,13 +3,12 @@ using SurpassApiSdk.DataContracts.Response;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.TestSession
+namespace SurpassApiSdk.DataContracts.TestSession;
+
+[DataContract(Name = ApiConsts.Contracts.Response, Namespace = "")]
+[ControllerName(ApiConsts.Segments.TestScheduleV2, 2)]
+public class TestSessionPostResponseModel : TimeZonePostResponseModel
 {
-    [DataContract(Name = ApiConsts.Contracts.Response, Namespace = "")]
-    [ControllerName(ApiConsts.Segments.TestScheduleV2, 2)]
-    public class TestSessionPostResponseModel : TimeZonePostResponseModel
-    {
-        [DataMember(Name = ApiConsts.Members.Message, Order = 5)]
-        public string Message { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.Message, Order = 5)]
+    public string Message { get; set; }
 }

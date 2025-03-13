@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.Models
+﻿namespace SurpassApiSdk.Models;
+
+public enum SurpassApiQuestionTitleDisplayMode
 {
-    public enum SurpassApiQuestionTitleDisplayMode
-    {
-        Name = 0,
-        Counter = 1
-    }
+    Name = 0,
+    Counter = 1
 }

@@ -1,12 +1,11 @@
 ﻿using System.Net;
 
-namespace SurpassApiSdk.Exceptions
+namespace SurpassApiSdk.Exceptions;
+
+public class AuthorizationException : HttpException
 {
-    public class AuthorizationException : HttpException
+    public AuthorizationException(string message)
+        : base(HttpStatusCode.Unauthorized, message)
     {
-        public AuthorizationException(string message)
-            : base(HttpStatusCode.Unauthorized, message)
-        {
-        }
     }
 }

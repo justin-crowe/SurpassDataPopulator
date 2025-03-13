@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
-{
-    internal interface ISurpassLanguageVariantApiUrlFormatter
-    {
-        string GetForParentId(int id);
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
 
-        string GetForIdAndCode(int id, string code);
-    }
+internal interface ISurpassLanguageVariantApiUrlFormatter
+{
+    string GetForParentId(int id);
+
+    string GetForIdAndCode(int id, string code);
 }

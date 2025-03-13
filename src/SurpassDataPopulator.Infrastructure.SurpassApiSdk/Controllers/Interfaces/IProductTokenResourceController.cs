@@ -1,12 +1,11 @@
 ﻿using SurpassApiSdk.DataContracts.ProductToken;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IProductTokenResourceController
 {
-    public interface IProductTokenResourceController
-    {
-        TimeZonePageResponse<ProductTokenDetailedResource> Get(
-            ProductType productId,
-            ProductTabType productTabId);
-    }
+    TimeZonePageResponse<ProductTokenDetailedResource> Get(
+        ProductType productId,
+        ProductTabType productTabId);
 }

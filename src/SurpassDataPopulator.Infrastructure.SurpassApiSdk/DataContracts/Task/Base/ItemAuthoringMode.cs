@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Task.Base
+﻿namespace SurpassApiSdk.DataContracts.Task.Base;
+
+public enum ItemAuthoringMode
 {
-    public enum ItemAuthoringMode
-    {
-        List = 0,
-        Subject = 1
-    }
+    List = 0,
+    Subject = 1
 }

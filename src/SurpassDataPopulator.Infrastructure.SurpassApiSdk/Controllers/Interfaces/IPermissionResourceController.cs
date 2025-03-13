@@ -1,10 +1,9 @@
 ﻿using SurpassApiSdk.DataContracts.Permissions;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IPermissionResourceController
 {
-    public interface IPermissionResourceController
-    {
-        TimeZonePageResponse<RoleTypeResource> Get();
-    }
+    TimeZonePageResponse<RoleTypeResource> Get();
 }

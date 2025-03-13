@@ -2,11 +2,10 @@
 using SurpassApiSdk.DataContracts.Response;
 using SurpassApiSdk.Infrastructure;
 
-namespace SurpassApiSdk.DataContracts.Section
+namespace SurpassApiSdk.DataContracts.Section;
+
+public class SectionUpdateResponse : PostResponseModel
 {
-    public class SectionUpdateResponse : PostResponseModel
-    {
-        [DataMember(Name = ApiConsts.Members.TestFormId, Order = 1)]
-        public int TestFormId { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.TestFormId, Order = 1)]
+    public int TestFormId { get; set; }
 }

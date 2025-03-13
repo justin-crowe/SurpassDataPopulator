@@ -1,38 +1,37 @@
 ﻿using SurpassApiSdk.UrlFormatters.Interfaces;
 
-namespace SurpassApiSdk.UrlFormatters
+namespace SurpassApiSdk.UrlFormatters;
+
+internal class SurpassItemReviewResultApiUrlFormatter : SurpassApiUrlFormatter,
+    ISurpassItemReviewResultApiUrlFormatter
 {
-    internal class SurpassItemReviewResultApiUrlFormatter : SurpassApiUrlFormatter,
-        ISurpassItemReviewResultApiUrlFormatter
+    internal SurpassItemReviewResultApiUrlFormatter(string template)
+        : base(template)
     {
-        internal SurpassItemReviewResultApiUrlFormatter(string template)
-            : base(template)
-        {
-        }
+    }
 
-        public string GetForItemReviewResults(long taskId, string queryString = null)
-        {
-            var queryStr = $"taskId={taskId}";
+    public string GetForItemReviewResults(long taskId, string queryString = null)
+    {
+        var queryStr = $"taskId={taskId}";
 
-            if (!string.IsNullOrEmpty(queryString))
-                queryStr = string.Join("&", queryStr, queryString);
+        if (!string.IsNullOrEmpty(queryString))
+            queryStr = string.Join("&", queryStr, queryString);
 
-            return GetForQueryString(queryStr);
-        }
+        return GetForQueryString(queryStr);
+    }
 
-        public string GetForItemReviewResults(string taskReference, string queryString = null)
-        {
-            var queryStr = $"taskReference={taskReference}";
+    public string GetForItemReviewResults(string taskReference, string queryString = null)
+    {
+        var queryStr = $"taskReference={taskReference}";
 
-            if (!string.IsNullOrEmpty(queryString))
-                queryStr = string.Join("&", queryStr, queryString);
+        if (!string.IsNullOrEmpty(queryString))
+            queryStr = string.Join("&", queryStr, queryString);
 
-            return GetForQueryString(queryStr);
-        }
+        return GetForQueryString(queryStr);
+    }
 
-        public string GetForItemReviewResult(long resultId)
-        {
-            return $"{Template}/{resultId}";
-        }
+    public string GetForItemReviewResult(long resultId)
+    {
+        return $"{Template}/{resultId}";
     }
 }

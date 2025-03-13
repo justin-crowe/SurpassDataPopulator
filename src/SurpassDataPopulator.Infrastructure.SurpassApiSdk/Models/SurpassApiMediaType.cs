@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.Models
+﻿namespace SurpassApiSdk.Models;
+
+public enum SurpassApiMediaType
 {
-    public enum SurpassApiMediaType
-    {
-        Json,
-        Xml,
-        TextXml
-    }
+    Json,
+    Xml,
+    TextXml
 }

@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Section
+﻿namespace SurpassApiSdk.DataContracts.Section;
+
+public enum ESectionOutcome
 {
-    public enum ESectionOutcome
-    {
-        Fail,
-        Continue,
-        Pass
-    }
+    Fail,
+    Continue,
+    Pass
 }

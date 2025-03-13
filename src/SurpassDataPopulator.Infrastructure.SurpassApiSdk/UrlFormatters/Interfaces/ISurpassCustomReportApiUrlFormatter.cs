@@ -1,13 +1,12 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
+
+internal interface ISurpassCustomReportApiUrlFormatter : ISurpassApiUrlFormatter
 {
-    internal interface ISurpassCustomReportApiUrlFormatter : ISurpassApiUrlFormatter
-    {
-        string GetForCheckReferenceUniqueness(string reference);
+    string GetForCheckReferenceUniqueness(string reference);
 
-        string GetForFileGeneration();
+    string GetForFileGeneration();
 
-        string GetForHtmlGeneration();
+    string GetForHtmlGeneration();
 
-        string GetForWrappedHtmlGeneration();
-    }
+    string GetForWrappedHtmlGeneration();
 }

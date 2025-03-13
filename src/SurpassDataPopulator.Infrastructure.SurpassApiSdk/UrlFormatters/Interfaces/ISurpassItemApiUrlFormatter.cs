@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
+
+internal interface ISurpassItemApiUrlFormatter : ISurpassBasicPageApiUrlFormatter
 {
-    internal interface ISurpassItemApiUrlFormatter : ISurpassBasicPageApiUrlFormatter
-    {
-        string GetForQueryString(string queryString, bool includeDeleted);
-    }
+    string GetForQueryString(string queryString, bool includeDeleted);
 }

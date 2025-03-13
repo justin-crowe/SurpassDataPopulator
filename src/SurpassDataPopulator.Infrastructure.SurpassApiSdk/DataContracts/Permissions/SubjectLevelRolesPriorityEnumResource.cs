@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Permissions
+﻿namespace SurpassApiSdk.DataContracts.Permissions;
+
+public enum SubjectLevelRolesPriorityEnumResource
 {
-    public enum SubjectLevelRolesPriorityEnumResource
-    {
-        CentrePriority = 0,
-        SubjectPriority = 1
-    }
+    CentrePriority = 0,
+    SubjectPriority = 1
 }

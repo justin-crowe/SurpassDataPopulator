@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Item.Enums
+﻿namespace SurpassApiSdk.DataContracts.Item.Enums;
+
+public enum TextDirectionMode
 {
-    public enum TextDirectionMode
-    {
-        LeftToRight = 0,
-        RightToLeft
-    }
+    LeftToRight = 0,
+    RightToLeft
 }

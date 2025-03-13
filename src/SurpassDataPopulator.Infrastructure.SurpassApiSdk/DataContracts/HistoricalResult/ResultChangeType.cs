@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.HistoricalResult
-{
-    public enum ResultChangeType
-    {
-        Rescore = 0,
+﻿namespace SurpassApiSdk.DataContracts.HistoricalResult;
 
-        ScaleScore = 1
-    }
+public enum ResultChangeType
+{
+    Rescore = 0,
+
+    ScaleScore = 1
 }

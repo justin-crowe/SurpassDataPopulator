@@ -1,12 +1,11 @@
 ﻿using System.Net;
 
-namespace SurpassApiSdk.Exceptions
+namespace SurpassApiSdk.Exceptions;
+
+public class NotFoundException : HttpException
 {
-    public class NotFoundException : HttpException
+    public NotFoundException(string message)
+        : base(HttpStatusCode.NotFound, message)
     {
-        public NotFoundException(string message)
-            : base(HttpStatusCode.NotFound, message)
-        {
-        }
     }
 }

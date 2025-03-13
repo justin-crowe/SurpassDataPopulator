@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
-{
-    internal interface ISurpassItemListApiUrlFormatter : ISurpassApiUrlFormatter
-    {
-        string GetForId(int id, bool permanent);
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
 
-        string GetForReference(string keycode, bool permanent);
-    }
+internal interface ISurpassItemListApiUrlFormatter : ISurpassApiUrlFormatter
+{
+    string GetForId(int id, bool permanent);
+
+    string GetForReference(string keycode, bool permanent);
 }

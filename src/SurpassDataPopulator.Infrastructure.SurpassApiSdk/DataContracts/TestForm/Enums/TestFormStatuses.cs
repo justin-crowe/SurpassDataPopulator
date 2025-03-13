@@ -1,10 +1,9 @@
-﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums
+﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums;
+
+public enum TestFormStatuses
 {
-    public enum TestFormStatuses
-    {
-        Retired = 0,
-        Draft = 1,
-        Live = 2,
-        QualityReview = 3
-    }
+    Retired = 0,
+    Draft = 1,
+    Live = 2,
+    QualityReview = 3
 }

@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Task.ItemReview
+﻿namespace SurpassApiSdk.DataContracts.Task.ItemReview;
+
+public enum ReviewType
 {
-    public enum ReviewType
-    {
-        Single = 0,
-        Multiple = 1,
-        ItemAnalysis = 2
-    }
+    Single = 0,
+    Multiple = 1,
+    ItemAnalysis = 2
 }

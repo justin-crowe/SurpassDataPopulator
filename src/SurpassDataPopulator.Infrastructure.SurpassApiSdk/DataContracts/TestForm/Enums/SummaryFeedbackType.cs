@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums
+﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums;
+
+public enum SummaryFeedbackType
 {
-    public enum SummaryFeedbackType
-    {
-        EndOfTest = 0,
-        EndOfSection = 1,
-        EndOfSectionAndTest = 2
-    }
+    EndOfTest = 0,
+    EndOfSection = 1,
+    EndOfSectionAndTest = 2
 }

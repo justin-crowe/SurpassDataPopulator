@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Subject
+﻿namespace SurpassApiSdk.DataContracts.Subject;
+
+public enum DeliveryType
 {
-    public enum DeliveryType
-    {
-        OnScreen = 0,
-        OnPaper = 1
-    }
+    OnScreen = 0,
+    OnPaper = 1
 }

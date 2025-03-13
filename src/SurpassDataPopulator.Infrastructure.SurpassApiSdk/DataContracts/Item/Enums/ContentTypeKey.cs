@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Item
+﻿namespace SurpassApiSdk.DataContracts.Item;
+
+public enum ContentTypeKey
 {
-    public enum ContentTypeKey
-    {
-        RichText = 0,
-        MathMl = 1,
-        Image = 2
-    }
+    RichText = 0,
+    MathMl = 1,
+    Image = 2
 }

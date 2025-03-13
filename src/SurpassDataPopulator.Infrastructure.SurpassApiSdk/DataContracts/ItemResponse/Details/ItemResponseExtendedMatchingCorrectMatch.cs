@@ -1,14 +1,13 @@
 ﻿using System.Runtime.Serialization;
 using SurpassApiSdk.Infrastructure;
 
-namespace SurpassApiSdk.DataContracts.ItemResponse.Details
-{
-    public class ItemResponseExtendedMatchingCorrectMatch
-    {
-        [DataMember(Name = ApiConsts.Members.LeftBoxId, EmitDefaultValue = false, Order = 1)]
-        public int LeftOption { get; set; }
+namespace SurpassApiSdk.DataContracts.ItemResponse.Details;
 
-        [DataMember(Name = ApiConsts.Members.RightBoxId, EmitDefaultValue = false, Order = 2)]
-        public int RightOption { get; set; }
-    }
+public class ItemResponseExtendedMatchingCorrectMatch
+{
+    [DataMember(Name = ApiConsts.Members.LeftBoxId, EmitDefaultValue = false, Order = 1)]
+    public int LeftOption { get; set; }
+
+    [DataMember(Name = ApiConsts.Members.RightBoxId, EmitDefaultValue = false, Order = 2)]
+    public int RightOption { get; set; }
 }

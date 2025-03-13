@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Task.ItemReview
+﻿namespace SurpassApiSdk.DataContracts.Task.ItemReview;
+
+public enum ReviewResult
 {
-    public enum ReviewResult
-    {
-        Reject = 0,
-        Advise = 1,
-        Approve = 2
-    }
+    Reject = 0,
+    Advise = 1,
+    Approve = 2
 }

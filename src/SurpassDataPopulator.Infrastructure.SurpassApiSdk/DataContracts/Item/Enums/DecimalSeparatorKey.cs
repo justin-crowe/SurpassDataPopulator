@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Item
+﻿namespace SurpassApiSdk.DataContracts.Item;
+
+public enum DecimalSeparatorKey
 {
-    public enum DecimalSeparatorKey
-    {
-        Global = 0,
-        Decimal = 46,
-        Comma = 44,
-    }
+    Global = 0,
+    Decimal = 46,
+    Comma = 44,
 }

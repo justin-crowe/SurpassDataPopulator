@@ -2,17 +2,16 @@
 using SurpassApiSdk.DataContracts.TestSchedule;
 using SurpassApiSdk.Models;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface ITestScheduleResourceController
 {
-    public interface ITestScheduleResourceController
-    {
-        TimeZonePostResponseModel Delete(string keycode);
+    TimeZonePostResponseModel Delete(string keycode);
 
-        TimeZonePostResponseModel Delete(int id);
+    TimeZonePostResponseModel Delete(int id);
 
-        TestSchedulePostResponseModel Post(
-            TestScheduleResource testSchedule,
-            IEnumerable<HttpHeader> headers = null,
-            bool quickRegisterCandidate = false);
-    }
+    TestSchedulePostResponseModel Post(
+        TestScheduleResource testSchedule,
+        IEnumerable<HttpHeader> headers = null,
+        bool quickRegisterCandidate = false);
 }

@@ -1,12 +1,11 @@
 ﻿using SurpassApiSdk.DataContracts.Comment;
 using SurpassApiSdk.DataContracts.User;
 
-namespace SurpassApiSdk.Interfaces.DataContracts
-{
-    public interface ICommentedEntity
-    {
-        UserResource Owner { get; set; }
+namespace SurpassApiSdk.Interfaces.DataContracts;
 
-        List<CommentResource> Comments { get; set; }
-    }
+public interface ICommentedEntity
+{
+    UserResource Owner { get; set; }
+
+    List<CommentResource> Comments { get; set; }
 }

@@ -3,16 +3,15 @@ using SurpassApiSdk.DataContracts.Base;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.Subject
+namespace SurpassApiSdk.DataContracts.Subject;
+
+[ControllerName(ApiConsts.Segments.Subject, 2)]
+[DataContract(Name = ApiConsts.Contracts.Subject, Namespace = "")]
+public class SubjectLinkedResource : LinkedResource
 {
-    [ControllerName(ApiConsts.Segments.Subject, 2)]
-    [DataContract(Name = ApiConsts.Contracts.Subject, Namespace = "")]
-    public class SubjectLinkedResource : LinkedResource
-    {
-        /// <summary>
-        /// Gets or sets subject Name.
-        /// </summary>
-        [DataMember(Name = ApiConsts.Members.Name, Order = 3)]
-        public string Name { get; set; }
-    }
+    /// <summary>
+    /// Gets or sets subject Name.
+    /// </summary>
+    [DataMember(Name = ApiConsts.Members.Name, Order = 3)]
+    public string Name { get; set; }
 }

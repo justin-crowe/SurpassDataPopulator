@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.DataContracts.Response
+﻿namespace SurpassApiSdk.DataContracts.Response;
+
+public interface ITimeZoneResponse
 {
-    public interface ITimeZoneResponse
-    {
-        string ServerTimeZone { get; set; }
-    }
+    string ServerTimeZone { get; set; }
 }

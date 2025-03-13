@@ -3,11 +3,10 @@ using SurpassApiSdk.DataContracts.Base;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.ItemSet
+namespace SurpassApiSdk.DataContracts.ItemSet;
+
+[ControllerName(ApiConsts.Segments.ItemSet, 2)]
+[DataContract(Name = ApiConsts.Contracts.ItemSet, Namespace = "")]
+public class ItemSetLinkedResource : LinkedResource
 {
-    [ControllerName(ApiConsts.Segments.ItemSet, 2)]
-    [DataContract(Name = ApiConsts.Contracts.ItemSet, Namespace = "")]
-    public class ItemSetLinkedResource : LinkedResource
-    {
-    }
 }

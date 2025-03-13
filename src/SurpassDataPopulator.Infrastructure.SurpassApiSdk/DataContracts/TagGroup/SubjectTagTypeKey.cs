@@ -1,10 +1,9 @@
-﻿namespace SurpassApiSdk.DataContracts.TagGroup
+﻿namespace SurpassApiSdk.DataContracts.TagGroup;
+
+public enum SubjectTagTypeKey
 {
-    public enum SubjectTagTypeKey
-    {
-        LearningOutcome = 1,
-        Unit = 2,
-        Keyword = 3,
-        Custom = 4
-    }
+    LearningOutcome = 1,
+    Unit = 2,
+    Keyword = 3,
+    Custom = 4
 }

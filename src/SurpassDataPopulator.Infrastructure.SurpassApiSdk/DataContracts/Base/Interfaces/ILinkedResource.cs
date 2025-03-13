@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.DataContracts.Base.Interfaces
+﻿namespace SurpassApiSdk.DataContracts.Base.Interfaces;
+
+public interface ILinkedResource
 {
-    public interface ILinkedResource
-    {
-        string Href { get; set; }
-    }
+    string Href { get; set; }
 }

@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.CustomReports
+﻿namespace SurpassApiSdk.DataContracts.CustomReports;
+
+public enum CustomReportTemplatingEngineType
 {
-    public enum CustomReportTemplatingEngineType
-    {
-        None,
-        Scriban
-    }
+    None,
+    Scriban
 }

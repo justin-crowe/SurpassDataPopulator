@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Item
+﻿namespace SurpassApiSdk.DataContracts.Item;
+
+public enum MarkingTypeKey
 {
-    public enum MarkingTypeKey
-    {
-        Computer = 0,
-        Human = 1
-    }
+    Computer = 0,
+    Human = 1
 }

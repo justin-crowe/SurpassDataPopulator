@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum TestStatus
 {
-    public enum TestStatus
-    {
-        Draft = 0,
-        Retired = 1,
-        Live = 2,
-    }
+    Draft = 0,
+    Retired = 1,
+    Live = 2,
 }

@@ -2,22 +2,21 @@
 using SurpassApiSdk.DataContracts.Item.Details;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IItemResourceController
 {
-    public interface IItemResourceController
-    {
-        TimeZonePageResponse<ItemLinkedResource> Get(string queryString = null, bool includeDeleted = false);
+    TimeZonePageResponse<ItemLinkedResource> Get(string queryString = null, bool includeDeleted = false);
 
-        TimeZonePageResponse<ItemResource> Get(int id);
+    TimeZonePageResponse<ItemResource> Get(int id);
 
-        TimeZonePageResponse<AssistiveMediaResource> GetAssistiveMedia(int id, int assistiveMediaId);
+    TimeZonePageResponse<AssistiveMediaResource> GetAssistiveMedia(int id, int assistiveMediaId);
 
-        PostResponseModel Post(ItemInputResource itemResource);
+    PostResponseModel Post(ItemInputResource itemResource);
 
-        PostResponseModel Put(int id, ItemUpdateResource itemResource);
+    PostResponseModel Put(int id, ItemUpdateResource itemResource);
 
-        PostResponseModel PutAssistiveMedia(int id, int assistiveMediaId, AssistiveMediaInputResource resource);
+    PostResponseModel PutAssistiveMedia(int id, int assistiveMediaId, AssistiveMediaInputResource resource);
 
-        ItemDeleteTimeZonePostResponseModel Delete(int id);
-    }
+    ItemDeleteTimeZonePostResponseModel Delete(int id);
 }

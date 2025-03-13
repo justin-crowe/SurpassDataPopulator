@@ -1,9 +1,8 @@
 ﻿using SurpassApiSdk.DataContracts.CustomReports;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface ICustomReportGenerationResourceController
 {
-    public interface ICustomReportGenerationResourceController
-    {
-        CustomReportGenerateFilePostResponseModel GenerateFile(CustomReportGenerationInputResource resource);
-    }
+    CustomReportGenerateFilePostResponseModel GenerateFile(CustomReportGenerationInputResource resource);
 }

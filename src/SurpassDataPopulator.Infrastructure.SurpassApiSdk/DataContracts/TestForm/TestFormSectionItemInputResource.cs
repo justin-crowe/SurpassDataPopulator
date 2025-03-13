@@ -2,19 +2,18 @@
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.TestForm
+namespace SurpassApiSdk.DataContracts.TestForm;
+
+[ControllerName(ApiConsts.Segments.Item, 2)]
+[DataContract(Name = ApiConsts.Contracts.Item, Namespace = "")]
+public class TestFormSectionItemInputResource
 {
-    [ControllerName(ApiConsts.Segments.Item, 2)]
-    [DataContract(Name = ApiConsts.Contracts.Item, Namespace = "")]
-    public class TestFormSectionItemInputResource
-    {
-        [DataMember(Name = ApiConsts.Members.Id, Order = 0)]
-        public int Id { get; set; }
+    [DataMember(Name = ApiConsts.Members.Id, Order = 0)]
+    public int Id { get; set; }
 
-        [DataMember(Name = ApiConsts.Members.NonScored, Order = 1)]
-        public bool NonScored { get; set; }
+    [DataMember(Name = ApiConsts.Members.NonScored, Order = 1)]
+    public bool NonScored { get; set; }
 
-        [DataMember(Name = ApiConsts.Members.Group, Order = 2)]
-        public TestFormSectionGroupItemInputResource Group { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.Group, Order = 2)]
+    public TestFormSectionGroupItemInputResource Group { get; set; }
 }

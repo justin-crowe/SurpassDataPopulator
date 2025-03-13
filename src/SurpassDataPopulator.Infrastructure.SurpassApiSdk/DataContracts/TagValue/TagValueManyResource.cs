@@ -2,12 +2,11 @@
 using SurpassApiSdk.DataContracts.Base;
 using SurpassApiSdk.Infrastructure;
 
-namespace SurpassApiSdk.DataContracts.TagValue
+namespace SurpassApiSdk.DataContracts.TagValue;
+
+[DataContract(Name = ApiConsts.Contracts.TagValue, Namespace = "")]
+public class TagValueManyResource : LinkedResource
 {
-    [DataContract(Name = ApiConsts.Contracts.TagValue, Namespace = "")]
-    public class TagValueManyResource : LinkedResource
-    {
-        [DataMember(Name = ApiConsts.Members.TagValue, EmitDefaultValue = true)]
-        public string TagValue { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.TagValue, EmitDefaultValue = true)]
+    public string TagValue { get; set; }
 }

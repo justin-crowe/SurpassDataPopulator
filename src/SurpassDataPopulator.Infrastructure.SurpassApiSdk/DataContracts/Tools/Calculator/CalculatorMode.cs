@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Tools.Calculator
+﻿namespace SurpassApiSdk.DataContracts.Tools.Calculator;
+
+public enum CalculatorMode
 {
-    public enum CalculatorMode
-    {
-        Basic = 1,
-        Scientific = 2
-    }
+    Basic = 1,
+    Scientific = 2
 }

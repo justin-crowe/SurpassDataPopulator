@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.TestSchedule.Enum
+﻿namespace SurpassApiSdk.DataContracts.TestSchedule.Enum;
+
+public enum ExamState
 {
-    public enum ExamState
-    {
-        Ready = 4,
-        ExamArchived = 13
-    }
+    Ready = 4,
+    ExamArchived = 13
 }

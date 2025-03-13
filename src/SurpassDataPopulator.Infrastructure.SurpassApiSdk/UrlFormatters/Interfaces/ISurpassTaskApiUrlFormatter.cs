@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
-{
-    internal interface ISurpassTaskApiUrlFormatter : ISurpassApiUrlFormatter
-    {
-        string GetForIdDetailed(long id);
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
 
-        string GetForReferenceDetailed(string reference);
-    }
+internal interface ISurpassTaskApiUrlFormatter : ISurpassApiUrlFormatter
+{
+    string GetForIdDetailed(long id);
+
+    string GetForReferenceDetailed(string reference);
 }

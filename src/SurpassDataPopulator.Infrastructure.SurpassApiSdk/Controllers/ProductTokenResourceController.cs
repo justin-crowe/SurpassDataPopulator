@@ -4,28 +4,27 @@ using SurpassApiSdk.DataContracts.Response;
 using SurpassApiSdk.Interfaces;
 using SurpassApiSdk.UrlFormatters.Interfaces;
 
-namespace SurpassApiSdk.Controllers
+namespace SurpassApiSdk.Controllers;
+
+public class ProductTokenResourceController : IProductTokenResourceController
 {
-    public class ProductTokenResourceController : IProductTokenResourceController
+    private readonly IRestApiClient _restApiClient;
+    private readonly ISurpassProductTokenApiUrlFormatter _urlFormatter;
+
+    internal ProductTokenResourceController(
+        IRestApiClient restApiClient,
+        ISurpassProductTokenApiUrlFormatter urlFormatter)
     {
-        private readonly IRestApiClient _restApiClient;
-        private readonly ISurpassProductTokenApiUrlFormatter _urlFormatter;
+        _restApiClient = restApiClient;
+        _urlFormatter = urlFormatter;
+    }
 
-        internal ProductTokenResourceController(
-            IRestApiClient restApiClient,
-            ISurpassProductTokenApiUrlFormatter urlFormatter)
-        {
-            _restApiClient = restApiClient;
-            _urlFormatter = urlFormatter;
-        }
-
-        public TimeZonePageResponse<ProductTokenDetailedResource> Get(
-            ProductType productId,
-            ProductTabType productTabId)
-        {
-            return
-                _restApiClient.CallGet<TimeZonePageResponse<ProductTokenDetailedResource>>(
-                    _urlFormatter.GetForTypeWithTab(productId, productTabId));
-        }
+    public TimeZonePageResponse<ProductTokenDetailedResource> Get(
+        ProductType productId,
+        ProductTabType productTabId)
+    {
+        return
+            _restApiClient.CallGet<TimeZonePageResponse<ProductTokenDetailedResource>>(
+                _urlFormatter.GetForTypeWithTab(productId, productTabId));
     }
 }

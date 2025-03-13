@@ -1,68 +1,67 @@
 ﻿using SurpassApiSdk.Controllers.Interfaces;
 using SurpassApiSdk.Models;
 
-namespace SurpassApiSdk.Interfaces
+namespace SurpassApiSdk.Interfaces;
+
+public interface ISurpassApiClient
 {
-    public interface ISurpassApiClient
-    {
-        SurpassApiLanguageKey Language { get; set; }
+    SurpassApiLanguageKey Language { get; set; }
 
-        SurpassApiMediaType MediaType { get; set; }
+    SurpassApiMediaType MediaType { get; set; }
 
-        IBasicPageResourceController BasicPage { get; }
+    IBasicPageResourceController BasicPage { get; }
 
-        ICandidateResourceController Candidate { get; }
+    ICandidateResourceController Candidate { get; }
 
-        ICentreResourceController Centre { get; }
+    ICentreResourceController Centre { get; }
 
-        ICentreSubjectAssociationResourceController CentreSubjectAssociation { get; }
+    ICentreSubjectAssociationResourceController CentreSubjectAssociation { get; }
 
-        IFolderResourceController Folder { get; }
+    IFolderResourceController Folder { get; }
 
-        IItemSetResourceController ItemSet { get; }
+    IItemSetResourceController ItemSet { get; }
 
-        IItemResourceController Item { get; }
+    IItemResourceController Item { get; }
 
-        IItemTagValueResourceController ItemTagValue { get; }
+    IItemTagValueResourceController ItemTagValue { get; }
 
-        IMediaResourceController Media { get; }
+    IMediaResourceController Media { get; }
 
-        IPermissionResourceController Permission { get; }
+    IPermissionResourceController Permission { get; }
 
-        IReportResourceController Reports { get; }
+    IReportResourceController Reports { get; }
 
-        IResultResourceController Result { get; }
+    IResultResourceController Result { get; }
 
-        ISubjectResourceController Subject { get; }
+    ISubjectResourceController Subject { get; }
 
-        ISummaryResultResourceController SummaryResult { get; }
+    ISummaryResultResourceController SummaryResult { get; }
 
-        ITagGroupResourceController TagGroup { get; }
+    ITagGroupResourceController TagGroup { get; }
 
-        ITagValueResourceController TagValue { get; }
+    ITagValueResourceController TagValue { get; }
 
-        ITestProfileResourceController TestProfile { get; }
+    ITestProfileResourceController TestProfile { get; }
 
-        ITestScheduleResourceController TestSchedule { get; }
+    ITestScheduleResourceController TestSchedule { get; }
 
-        ITestSessionResourceController TestSession { get; }
+    ITestSessionResourceController TestSession { get; }
 
-        ITokenCreateResourceController TokenCreate { get; }
+    ITokenCreateResourceController TokenCreate { get; }
 
-        IUserResourceController User { get; }
+    IUserResourceController User { get; }
 
-        IUserRoleResourceController UserRole { get; }
+    IUserRoleResourceController UserRole { get; }
 
-        ITestResourceController Test { get; }
+    ITestResourceController Test { get; }
 
-        ITaskResourceController Task { get; }
+    ITaskResourceController Task { get; }
 
-        IGeneralTaskResourceController GeneralTask { get; }
+    IGeneralTaskResourceController GeneralTask { get; }
 
-        IWorkflowStatusResourceController WorkflowStatus { get; }
+    IWorkflowStatusResourceController WorkflowStatus { get; }
 
-        ITestFormResourceController TestForm { get; }
+    ITestFormResourceController TestForm { get; }
 
-        bool ValidateSslCertificate { get; set; }
-    }
+    bool ValidateSslCertificate { get; set; }
 }

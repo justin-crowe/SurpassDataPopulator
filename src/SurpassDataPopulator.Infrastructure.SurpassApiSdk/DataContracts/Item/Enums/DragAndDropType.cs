@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Item
+﻿namespace SurpassApiSdk.DataContracts.Item;
+
+public enum DragAndDropType
 {
-   public enum DragAndDropType
-    {
-        Standard = 0,
-        Advanced = 1
-    }
+    Standard = 0,
+    Advanced = 1
 }

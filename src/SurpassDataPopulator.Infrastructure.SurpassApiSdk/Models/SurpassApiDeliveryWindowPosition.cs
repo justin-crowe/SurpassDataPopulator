@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.Models
+﻿namespace SurpassApiSdk.Models;
+
+public enum SurpassApiDeliveryWindowPosition
 {
-    public enum SurpassApiDeliveryWindowPosition
-    {
-        Central = 0,
-        Left = 1,
-        Right = 2
-    }
+    Central = 0,
+    Left = 1,
+    Right = 2
 }

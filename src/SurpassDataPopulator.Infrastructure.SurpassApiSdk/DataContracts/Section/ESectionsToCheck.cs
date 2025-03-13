@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Section
+﻿namespace SurpassApiSdk.DataContracts.Section;
+
+public enum ESectionsToCheck
 {
-    public enum ESectionsToCheck
-    {
-        CurrentOnly = 0,
-        AllPrevious
-    }
+    CurrentOnly = 0,
+    AllPrevious
 }

@@ -1,15 +1,14 @@
-﻿namespace SurpassApiSdk.DataContracts.Response
+﻿namespace SurpassApiSdk.DataContracts.Response;
+
+public interface IPageResponse : IResponse
 {
-    public interface IPageResponse : IResponse
-    {
-        Uri PreviousPageLink { get; set; }
+    Uri PreviousPageLink { get; set; }
 
-        Uri NextPageLink { get; set; }
+    Uri NextPageLink { get; set; }
 
-        long? Count { get; set; }
+    long? Count { get; set; }
 
-        int? Top { get; set; }
+    int? Top { get; set; }
 
-        int? Skip { get; set; }
-    }
+    int? Skip { get; set; }
 }

@@ -1,24 +1,23 @@
 ﻿using SurpassApiSdk.UrlFormatters.Interfaces;
 
-namespace SurpassApiSdk.UrlFormatters
+namespace SurpassApiSdk.UrlFormatters;
+
+internal class SurpassTaskApiUrlFormatter : SurpassApiUrlFormatter, ISurpassTaskApiUrlFormatter
 {
-    internal class SurpassTaskApiUrlFormatter : SurpassApiUrlFormatter, ISurpassTaskApiUrlFormatter
+    private const string IncludeDetails = "includeDetails=true";
+
+    public SurpassTaskApiUrlFormatter(string template)
+        : base(template)
     {
-        private const string IncludeDetails = "includeDetails=true";
+    }
 
-        public SurpassTaskApiUrlFormatter(string template)
-            : base(template)
-        {
-        }
+    public string GetForIdDetailed(long id)
+    {
+        return $"{GetForId(id)}?{IncludeDetails}";
+    }
 
-        public string GetForIdDetailed(long id)
-        {
-            return $"{GetForId(id)}?{IncludeDetails}";
-        }
-
-        public string GetForReferenceDetailed(string reference)
-        {
-            return $"{GetForReference(reference)}&{IncludeDetails}";
-        }
+    public string GetForReferenceDetailed(string reference)
+    {
+        return $"{GetForReference(reference)}&{IncludeDetails}";
     }
 }

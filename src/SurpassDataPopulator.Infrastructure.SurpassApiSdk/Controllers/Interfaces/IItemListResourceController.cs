@@ -1,22 +1,21 @@
 ﻿using SurpassApiSdk.DataContracts.ItemList;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IItemListResourceController
 {
-    public interface IItemListResourceController
-    {
-        TimeZonePageResponse<ItemListDetailResource> Get(int id);
+    TimeZonePageResponse<ItemListDetailResource> Get(int id);
 
-        TimeZonePageResponse<ItemListDetailResource> GetByReference(string reference);
+    TimeZonePageResponse<ItemListDetailResource> GetByReference(string reference);
 
-        TimeZonePageResponse<ItemListResource> Get(string queryString);
+    TimeZonePageResponse<ItemListResource> Get(string queryString);
 
-        TimeZonePostResponseModel Delete(int id, bool permanent = false);
+    TimeZonePostResponseModel Delete(int id, bool permanent = false);
 
-        TimeZonePostResponseModel Delete(string reference, bool permanent = false);
+    TimeZonePostResponseModel Delete(string reference, bool permanent = false);
 
-        TimeZonePostResponseModel Post(ItemListCreateResource itemListCreateResource);
+    TimeZonePostResponseModel Post(ItemListCreateResource itemListCreateResource);
 
-        TimeZonePostResponseModel Put(int id, ItemListUpdateResource itemUpdateListUpdate);
-    }
+    TimeZonePostResponseModel Put(int id, ItemListUpdateResource itemUpdateListUpdate);
 }

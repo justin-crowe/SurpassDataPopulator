@@ -2,28 +2,27 @@
 using SurpassApiSdk.DataContracts.Task.ItemReview;
 using SurpassApiSdk.Models;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IItemReviewTaskResourceController
 {
-    public interface IItemReviewTaskResourceController
-    {
-        TimeZonePageResponse<ItemReviewTaskDetailedSlimResource> Get(long id);
+    TimeZonePageResponse<ItemReviewTaskDetailedSlimResource> Get(long id);
 
-        TimeZonePageResponse<ItemReviewTaskDetailedExtendedResource> GetDetailed(long id);
+    TimeZonePageResponse<ItemReviewTaskDetailedExtendedResource> GetDetailed(long id);
 
-        TimeZonePageResponse<ItemReviewTaskDetailedSlimResource> GetByReference(string reference);
+    TimeZonePageResponse<ItemReviewTaskDetailedSlimResource> GetByReference(string reference);
 
-        TimeZonePageResponse<ItemReviewTaskDetailedExtendedResource> GetByReferenceDetailed(string reference);
+    TimeZonePageResponse<ItemReviewTaskDetailedExtendedResource> GetByReferenceDetailed(string reference);
 
-        TimeZonePostResponseModel Post(ItemReviewTaskCreateResource itemReviewTaskCreateResource);
+    TimeZonePostResponseModel Post(ItemReviewTaskCreateResource itemReviewTaskCreateResource);
 
-        TimeZonePostResponseModel Put(
-            long id,
-            ItemReviewTaskUpdateResource itemReviewTaskUpdateResource,
-            IEnumerable<HttpHeader> headers = null);
+    TimeZonePostResponseModel Put(
+        long id,
+        ItemReviewTaskUpdateResource itemReviewTaskUpdateResource,
+        IEnumerable<HttpHeader> headers = null);
 
-        TimeZonePostResponseModel Put(
-            string reference,
-            ItemReviewTaskUpdateResource itemReviewTaskUpdateResource,
-            IEnumerable<HttpHeader> headers = null);
-    }
+    TimeZonePostResponseModel Put(
+        string reference,
+        ItemReviewTaskUpdateResource itemReviewTaskUpdateResource,
+        IEnumerable<HttpHeader> headers = null);
 }

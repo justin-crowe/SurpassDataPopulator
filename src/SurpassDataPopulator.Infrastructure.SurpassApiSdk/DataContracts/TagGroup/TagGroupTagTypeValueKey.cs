@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.TagGroup
+﻿namespace SurpassApiSdk.DataContracts.TagGroup;
+
+public enum TagGroupTagTypeValueKey
 {
-    public enum TagGroupTagTypeValueKey
-    {
-        Text = 0,
-        Numeric = 1
-    }
+    Text = 0,
+    Numeric = 1
 }

@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Task
+﻿namespace SurpassApiSdk.DataContracts.Task;
+
+public enum TaskUserRole
 {
-    public enum TaskUserRole
-    {
-        Assignee = 0,
-        LeadAssignee = 1
-    }
+    Assignee = 0,
+    LeadAssignee = 1
 }

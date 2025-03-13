@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Section
+﻿namespace SurpassApiSdk.DataContracts.Section;
+
+public enum ESectionPassMarkType
 {
-    public enum ESectionPassMarkType
-    {
-        Mark = 0,
-        Percent
-    }
+    Mark = 0,
+    Percent
 }

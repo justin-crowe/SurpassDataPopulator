@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.DataContracts.Base.Interfaces
+﻿namespace SurpassApiSdk.DataContracts.Base.Interfaces;
+
+public interface ILinkedIdResource : ILinkedResource
 {
-    public interface ILinkedIdResource : ILinkedResource
-    {
-        long? Id { get; set; }
-    }
+    long? Id { get; set; }
 }

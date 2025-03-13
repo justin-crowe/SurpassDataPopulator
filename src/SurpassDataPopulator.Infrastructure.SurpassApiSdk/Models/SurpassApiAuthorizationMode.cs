@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.Models
+﻿namespace SurpassApiSdk.Models;
+
+public enum SurpassApiAuthorizationMode
 {
-    public enum SurpassApiAuthorizationMode
-    {
-        Basic,
-        Saml,
-        Bearer
-    }
+    Basic,
+    Saml,
+    Bearer
 }

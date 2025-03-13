@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.ItemTagValue
-{
-    public class TagGroup
-    {
-        public long Id { get; set; }
+﻿namespace SurpassApiSdk.DataContracts.ItemTagValue;
 
-        public string Name { get; set; }
-    }
+public class TagGroup
+{
+    public long Id { get; set; }
+
+    public string Name { get; set; }
 }

@@ -2,16 +2,15 @@
 using SurpassApiSdk.DataContracts.ItemSet.LanguageVariants;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IItemSetLanguageVariantResourceController
 {
-    public interface IItemSetLanguageVariantResourceController
-    {
-        TimeZonePageResponse<LvItemSetResource> Get(int id, string languageCode);
+    TimeZonePageResponse<LvItemSetResource> Get(int id, string languageCode);
 
-        PostLvResponseModel Post(int id, LvItemSetInputResource lvItemSetInput);
+    PostLvResponseModel Post(int id, LvItemSetInputResource lvItemSetInput);
 
-        PostLvResponseModel Put(int id, string languageCode, LvItemSetUpdateResource lvItemSetUpdate);
+    PostLvResponseModel Put(int id, string languageCode, LvItemSetUpdateResource lvItemSetUpdate);
 
-        TimeZonePostResponseModel Delete(int id, string languageCode);
-    }
+    TimeZonePostResponseModel Delete(int id, string languageCode);
 }

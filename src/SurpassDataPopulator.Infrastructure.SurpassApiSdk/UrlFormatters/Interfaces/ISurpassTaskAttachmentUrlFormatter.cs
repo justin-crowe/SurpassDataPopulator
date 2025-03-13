@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.UrlFormatters.Interfaces
-{
-    internal interface ISurpassTaskAttachmentUrlFormatter
-    {
-        string GetForTaskId(long taskId);
+﻿namespace SurpassApiSdk.UrlFormatters.Interfaces;
 
-        string GetForTaskAttachmentId(long taskId, long id);
-    }
+internal interface ISurpassTaskAttachmentUrlFormatter
+{
+    string GetForTaskId(long taskId);
+
+    string GetForTaskAttachmentId(long taskId, long id);
 }

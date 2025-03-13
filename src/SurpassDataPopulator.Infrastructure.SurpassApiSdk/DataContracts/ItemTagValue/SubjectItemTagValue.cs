@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.DataContracts.ItemTagValue
+﻿namespace SurpassApiSdk.DataContracts.ItemTagValue;
+
+public class SubjectItemTagValue
 {
-    public class SubjectItemTagValue
-    {
-        public long Id { get; set; }
-    }
+    public long Id { get; set; }
 }

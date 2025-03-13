@@ -3,11 +3,10 @@ using SurpassApiSdk.DataContracts.Base;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.ItemTagValue
+namespace SurpassApiSdk.DataContracts.ItemTagValue;
+
+[DataContract(Name = ApiConsts.Contracts.ItemTagValue, Namespace = "")]
+[ControllerName(ApiConsts.Segments.ItemTagValue, 2)]
+public class SubjectItemTagValueResource : LinkedResource
 {
-    [DataContract(Name = ApiConsts.Contracts.ItemTagValue, Namespace = "")]
-    [ControllerName(ApiConsts.Segments.ItemTagValue, 2)]
-    public class SubjectItemTagValueResource : LinkedResource
-    {
-    }
 }

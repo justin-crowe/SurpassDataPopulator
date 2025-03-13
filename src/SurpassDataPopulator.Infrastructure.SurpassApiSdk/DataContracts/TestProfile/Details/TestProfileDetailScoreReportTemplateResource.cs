@@ -1,21 +1,20 @@
 ﻿using System.Runtime.Serialization;
 using SurpassApiSdk.Infrastructure;
 
-namespace SurpassApiSdk.DataContracts.TestProfile.Details
+namespace SurpassApiSdk.DataContracts.TestProfile.Details;
+
+[DataContract(Name = ApiConsts.Contracts.TestProfile, Namespace = "")]
+public class TestProfileDetailScoreReportTemplateResource
 {
-    [DataContract(Name = ApiConsts.Contracts.TestProfile, Namespace = "")]
-    public class TestProfileDetailScoreReportTemplateResource
-    {
-        [DataMember(Name = ApiConsts.Members.Id, EmitDefaultValue = true)]
-        public int Id { get; set; }
+    [DataMember(Name = ApiConsts.Members.Id, EmitDefaultValue = true)]
+    public int Id { get; set; }
 
-        [DataMember(Name = ApiConsts.Members.FileUrl, EmitDefaultValue = true)]
-        public string FileUrl { get; set; }
+    [DataMember(Name = ApiConsts.Members.FileUrl, EmitDefaultValue = true)]
+    public string FileUrl { get; set; }
 
-        [DataMember(Name = ApiConsts.Members.FileName, EmitDefaultValue = true)]
-        public string FileName { get; set; }
+    [DataMember(Name = ApiConsts.Members.FileName, EmitDefaultValue = true)]
+    public string FileName { get; set; }
 
-        [DataMember(Name = ApiConsts.Members.TempFilePath, EmitDefaultValue = true)]
-        public string TempFilePath { get; set; }
-    }
+    [DataMember(Name = ApiConsts.Members.TempFilePath, EmitDefaultValue = true)]
+    public string TempFilePath { get; set; }
 }

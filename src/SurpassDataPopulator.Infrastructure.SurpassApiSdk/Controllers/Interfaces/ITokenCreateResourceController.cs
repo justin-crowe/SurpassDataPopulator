@@ -1,9 +1,8 @@
 ﻿using SurpassApiSdk.DataContracts.Token;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface ITokenCreateResourceController
 {
-    public interface ITokenCreateResourceController
-    {
-        TokenPostResponseModel Post(TokenCreateResource token);
-    }
+    TokenPostResponseModel Post(TokenCreateResource token);
 }

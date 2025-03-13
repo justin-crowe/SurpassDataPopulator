@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum TestProgressBarMode
 {
-    public enum TestProgressBarMode
-    {
-        ItemBased = 0,
-        MarksBased = 1
-    }
+    ItemBased = 0,
+    MarksBased = 1
 }

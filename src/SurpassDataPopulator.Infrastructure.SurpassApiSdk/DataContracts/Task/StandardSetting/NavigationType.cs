@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Task.StandardSetting
+﻿namespace SurpassApiSdk.DataContracts.Task.StandardSetting;
+
+public enum NavigationType
 {
-    public enum NavigationType
-    {
-        Standard = 0,
-        ForwardOnly = 1
-    }
+    Standard = 0,
+    ForwardOnly = 1
 }

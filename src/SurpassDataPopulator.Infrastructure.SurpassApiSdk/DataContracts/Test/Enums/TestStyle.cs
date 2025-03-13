@@ -1,10 +1,9 @@
-﻿namespace SurpassApiSdk.DataContracts.Test.Enums
+﻿namespace SurpassApiSdk.DataContracts.Test.Enums;
+
+public enum TestStyle
 {
-    public enum TestStyle
-    {
-        StandardNavigation = 0,
-        ForwardOnlyNavigation = 1,
-        CustomBranding = 2,
-        CustomBrandingForwardOnly = 3
-    }
+    StandardNavigation = 0,
+    ForwardOnlyNavigation = 1,
+    CustomBranding = 2,
+    CustomBrandingForwardOnly = 3
 }

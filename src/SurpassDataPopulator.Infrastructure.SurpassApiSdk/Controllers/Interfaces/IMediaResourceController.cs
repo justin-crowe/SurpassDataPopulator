@@ -1,14 +1,13 @@
 ﻿using SurpassApiSdk.DataContracts.Media;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IMediaResourceController
 {
-    public interface IMediaResourceController
-    {
-        PostResponseModel Post(MediaInputResource mediaInput);
+    PostResponseModel Post(MediaInputResource mediaInput);
 
-        TimeZonePageResponse<MediaDetailedResource> GetById(int id);
+    TimeZonePageResponse<MediaDetailedResource> GetById(int id);
 
-        Stream GetDataById(int id);
-    }
+    Stream GetDataById(int id);
 }

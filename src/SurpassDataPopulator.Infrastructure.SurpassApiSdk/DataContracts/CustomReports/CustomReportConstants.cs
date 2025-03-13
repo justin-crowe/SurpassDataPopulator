@@ -1,7 +1,6 @@
-﻿namespace SurpassApiSdk.DataContracts.CustomReports
+﻿namespace SurpassApiSdk.DataContracts.CustomReports;
+
+public static class CustomReportConstants
 {
-    public static class CustomReportConstants
-    {
-        public static readonly List<string> AllowedExtensions = new List<string> { ".html", ".htm" };
-    }
+    public static readonly List<string> AllowedExtensions = new List<string> { ".html", ".htm" };
 }

@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Tools
+﻿namespace SurpassApiSdk.DataContracts.Tools;
+
+public enum ItemToolType
 {
-    public enum ItemToolType
-    {
-        Calculator,
-        Caliper
-    }
+    Calculator,
+    Caliper
 }

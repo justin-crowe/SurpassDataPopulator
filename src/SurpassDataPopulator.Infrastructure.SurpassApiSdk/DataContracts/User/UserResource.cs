@@ -3,11 +3,10 @@ using SurpassApiSdk.DataContracts.Base;
 using SurpassApiSdk.Infrastructure;
 using SurpassApiSdk.Infrastructure.Attributes;
 
-namespace SurpassApiSdk.DataContracts.User
+namespace SurpassApiSdk.DataContracts.User;
+
+[ControllerName(ApiConsts.Segments.User, 2)]
+[DataContract(Name = ApiConsts.Contracts.User, Namespace = "")]
+public class UserResource : LinkedResource
 {
-    [ControllerName(ApiConsts.Segments.User, 2)]
-    [DataContract(Name = ApiConsts.Contracts.User, Namespace = "")]
-    public class UserResource : LinkedResource
-    {
-    }
 }

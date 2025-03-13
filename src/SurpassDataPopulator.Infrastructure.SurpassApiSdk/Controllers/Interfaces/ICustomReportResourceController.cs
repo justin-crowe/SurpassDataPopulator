@@ -1,18 +1,17 @@
 ﻿using SurpassApiSdk.DataContracts.CustomReports;
 using SurpassApiSdk.DataContracts.Response;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface ICustomReportResourceController
 {
-    public interface ICustomReportResourceController
-    {
-        TimeZonePageResponse<CustomReportLinkedResource> Get(string queryString = null);
+    TimeZonePageResponse<CustomReportLinkedResource> Get(string queryString = null);
 
-        TimeZonePageResponse<CustomReportDetailedResource> Get(long id);
+    TimeZonePageResponse<CustomReportDetailedResource> Get(long id);
 
-        TimeZonePageResponse<CustomReportDetailedResource> GetByReference(string reference);
+    TimeZonePageResponse<CustomReportDetailedResource> GetByReference(string reference);
 
-        TimeZonePostResponseModel Delete(long id);
+    TimeZonePostResponseModel Delete(long id);
 
-        TimeZonePostResponseModel Delete(string reference);
-    }
+    TimeZonePostResponseModel Delete(string reference);
 }

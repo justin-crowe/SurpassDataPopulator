@@ -1,16 +1,15 @@
 ﻿using SurpassApiSdk.DataContracts.Response;
 using SurpassApiSdk.DataContracts.UserPermission;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface IUserRoleResourceController
 {
-    public interface IUserRoleResourceController
-    {
-        TimeZonePostResponseModel Delete(long id);
+    TimeZonePostResponseModel Delete(long id);
 
-        PageResponse<UserRoleDetailedResource> Get(long id);
+    PageResponse<UserRoleDetailedResource> Get(long id);
 
-        TimeZonePageResponse<UserRoleResource> Get(string queryString = null);
+    TimeZonePageResponse<UserRoleResource> Get(string queryString = null);
 
-        TimeZonePostResponseModel Post(UserRoleCreateResource userRole);
-    }
+    TimeZonePostResponseModel Post(UserRoleCreateResource userRole);
 }

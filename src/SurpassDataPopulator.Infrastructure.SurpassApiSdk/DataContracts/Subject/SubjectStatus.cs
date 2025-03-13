@@ -1,9 +1,8 @@
-﻿namespace SurpassApiSdk.DataContracts.Subject
+﻿namespace SurpassApiSdk.DataContracts.Subject;
+
+public enum SubjectStatus
 {
-    public enum SubjectStatus
-    {
-        Active = 0,
-        Archived = 1,
-        ActiveRegistrationClosed = 2
-    }
+    Active = 0,
+    Archived = 1,
+    ActiveRegistrationClosed = 2
 }

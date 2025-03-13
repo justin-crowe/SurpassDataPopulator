@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums
+﻿namespace SurpassApiSdk.DataContracts.TestForm.Enums;
+
+public enum BreakType
 {
-    public enum BreakType
-    {
-        Fixed = 0,
-        Pooled = 1
-    }
+    Fixed = 0,
+    Pooled = 1
 }

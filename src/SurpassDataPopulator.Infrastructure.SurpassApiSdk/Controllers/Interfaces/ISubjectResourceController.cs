@@ -2,30 +2,29 @@
 using SurpassApiSdk.DataContracts.Subject;
 using SurpassApiSdk.Models;
 
-namespace SurpassApiSdk.Controllers.Interfaces
+namespace SurpassApiSdk.Controllers.Interfaces;
+
+public interface ISubjectResourceController
 {
-    public interface ISubjectResourceController
-    {
-        TimeZonePostResponseModel Delete(string reference);
+    TimeZonePostResponseModel Delete(string reference);
 
-        TimeZonePostResponseModel Delete(long id);
+    TimeZonePostResponseModel Delete(long id);
 
-        TimeZonePageResponse<SubjectDetailedResource> Get(long id);
+    TimeZonePageResponse<SubjectDetailedResource> Get(long id);
 
-        TimeZonePageResponse<SubjectLinkedResource> Get(string queryString = null);
+    TimeZonePageResponse<SubjectLinkedResource> Get(string queryString = null);
 
-        TimeZonePageResponse<SubjectDetailedResource> GetByReference(string reference);
+    TimeZonePageResponse<SubjectDetailedResource> GetByReference(string reference);
 
-        TimeZonePostResponseModel Post(SubjectCreateResource subjectResource);
+    TimeZonePostResponseModel Post(SubjectCreateResource subjectResource);
 
-        TimeZonePostResponseModel Put(
-            string reference,
-            SubjectUpdateResource subjectResource,
-            IEnumerable<HttpHeader> headers = null);
+    TimeZonePostResponseModel Put(
+        string reference,
+        SubjectUpdateResource subjectResource,
+        IEnumerable<HttpHeader> headers = null);
 
-        TimeZonePostResponseModel Put(
-            long id,
-            SubjectUpdateResource subjectResource,
-            IEnumerable<HttpHeader> headers = null);
-    }
+    TimeZonePostResponseModel Put(
+        long id,
+        SubjectUpdateResource subjectResource,
+        IEnumerable<HttpHeader> headers = null);
 }

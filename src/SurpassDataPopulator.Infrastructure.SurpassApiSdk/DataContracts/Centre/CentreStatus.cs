@@ -1,8 +1,7 @@
-﻿namespace SurpassApiSdk.DataContracts.Centre
+﻿namespace SurpassApiSdk.DataContracts.Centre;
+
+public enum CentreStatus
 {
-    public enum CentreStatus
-    {
-        Active = 0,
-        Retired = 1
-    }
+    Active = 0,
+    Retired = 1
 }
