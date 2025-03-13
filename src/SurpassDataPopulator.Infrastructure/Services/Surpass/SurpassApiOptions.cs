@@ -1,11 +1,10 @@
-﻿namespace SurpassDataPopulator.Infrastructure.Services.Surpass
-{
-    public class SurpassApiOptions
-    {
-        public static string ConfigSectionName => "SurpassApi";
+﻿namespace SurpassDataPopulator.Infrastructure.Services.Surpass;
 
-        public string BaseUrl { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-    }
+public class SurpassApiOptions
+{
+    public static string ConfigSectionName => "SurpassApi";
+
+    public string BaseUrl { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
 }

@@ -4,34 +4,33 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace SurpassDataPopulator.Application.Common.Behaviours
+namespace SurpassDataPopulator.Application.Common.Behaviours;
+
+public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : notnull, IRequest<TResponse>
 {
-    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : notnull, IRequest<TResponse>
+    private readonly Stopwatch _timer;
+    private readonly ILogger<TRequest> _logger;
+
+    public PerformanceBehaviour(ILogger<TRequest> logger)
     {
-        private readonly Stopwatch _timer;
-        private readonly ILogger<TRequest> _logger;
+        _timer = new Stopwatch();
+        _logger = logger;
+    }
 
-        public PerformanceBehaviour(ILogger<TRequest> logger)
-        {
-            _timer = new Stopwatch();
-            _logger = logger;
-        }
+    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+    {
+        _timer.Start();
+        var response = await next();
+        _timer.Stop();
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
-        {
-            _timer.Start();
-            var response = await next();
-            _timer.Stop();
-
-            var elapsedMilliseconds = _timer.ElapsedMilliseconds;
-            if (elapsedMilliseconds <= 500) return response;
+        var elapsedMilliseconds = _timer.ElapsedMilliseconds;
+        if (elapsedMilliseconds <= 500) return response;
             
-            var requestName = typeof(TRequest).Name;
-            _logger.LogWarning("Long Running Request: {RequestName} ({ElapsedMilliseconds} milliseconds) {@RequestBody}",
-                requestName, elapsedMilliseconds, request);
+        var requestName = typeof(TRequest).Name;
+        _logger.LogWarning("Long Running Request: {RequestName} ({ElapsedMilliseconds} milliseconds) {@RequestBody}",
+            requestName, elapsedMilliseconds, request);
 
-            return response;
-        }
+        return response;
     }
 }

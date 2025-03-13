@@ -1,8 +1,7 @@
-﻿namespace SurpassDataPopulator.Infrastructure.Services.OpenTriviaApi.Dto
+﻿namespace SurpassDataPopulator.Infrastructure.Services.OpenTriviaApi.Dto;
+
+public static class QuestionTypes
 {
-    public static class QuestionTypes
-    {
-        public const string MultipleChoice = "multiple";
-        public const string Boolean = "boolean";
-    }
+    public const string MultipleChoice = "multiple";
+    public const string Boolean = "boolean";
 }

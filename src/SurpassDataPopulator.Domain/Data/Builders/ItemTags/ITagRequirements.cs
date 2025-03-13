@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags
+namespace SurpassDataPopulator.Domain.Data.Builders.ItemTags;
+
+public interface ITagRequirements
 {
-    public interface ITagRequirements
-    {
-        string Type { get; }
-        List<ITagRequest> Requirements { get; }
-    }
+    string Type { get; }
+    List<ITagRequest> Requirements { get; }
 }

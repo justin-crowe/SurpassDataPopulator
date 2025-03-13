@@ -1,9 +1,8 @@
-﻿namespace SurpassDataPopulator.Domain.Entities.Items
+﻿namespace SurpassDataPopulator.Domain.Entities.Items;
+
+public enum Difficulty
 {
-    public enum Difficulty
-    {
-        Easy = 0,
-        Medium = 1,
-        Hard = 2
-    }
+    Easy = 0,
+    Medium = 1,
+    Hard = 2
 }

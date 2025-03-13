@@ -1,8 +1,7 @@
-﻿namespace SurpassDataPopulator.Domain.Entities.Items.QuestionTypes.MultipleChoice
+﻿namespace SurpassDataPopulator.Domain.Entities.Items.QuestionTypes.MultipleChoice;
+
+public class MultipleChoiceItemOption
 {
-    public class MultipleChoiceItemOption
-    {
-        public string Text { get; set; }
-        public bool CorrectAnswer { get; set; }
-    }
+    public string Text { get; set; }
+    public bool CorrectAnswer { get; set; }
 }

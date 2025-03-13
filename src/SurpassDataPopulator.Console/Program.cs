@@ -28,62 +28,60 @@ var host = Host.CreateDefaultBuilder(args)
     })
     .Build();
 */
-namespace SurpassDataPopulator.Console
+namespace SurpassDataPopulator.Console;
+
+static class Program
 {
-    static class Program
+    static async Task Main(string[] args)
     {
-        static async Task Main(string[] args)
+        try
         {
-            try
-            {
-                var configuration = BuildConfiguration();
-                var serviceProvider = BuildServiceProvider(configuration);
-                var app = serviceProvider.GetRequiredService<DataPopulatorApplication>();
-                await app.RunAsync(args);
-            }
-            catch (Exception e)
-            {
-                Log.Fatal(e, "Error in application");
-                throw;
-            }
-            finally
-            {
-                Log.Information("Finished..");
-                Log.CloseAndFlush();
-            }
+            var configuration = BuildConfiguration();
+            var serviceProvider = BuildServiceProvider(configuration);
+            var app = serviceProvider.GetRequiredService<DataPopulatorApplication>();
+            await app.RunAsync(args);
         }
-        
-        private static IConfigurationRoot BuildConfiguration()
+        catch (Exception e)
         {
-            var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", false, true)
-                //.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", false, true)
-                .Build();
-            
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configuration)
-                .CreateBootstrapLogger();
-            
-            Log.Information("Starting..");
-
-            return configuration;
+            Log.Fatal(e, "Error in application");
+            throw;
         }
-
-        private static ServiceProvider BuildServiceProvider(IConfigurationRoot configuration)
+        finally
         {
-            var services = new ServiceCollection();
-            ConfigureServices(services, configuration);
-            var serviceProvider = services.BuildServiceProvider();
-            return serviceProvider;
-        }
-
-        private static void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
-        {
-            services
-                .AddSingleton<DataPopulatorApplication>()
-                .AddApplication()
-                .AddInfrastructure(configuration);
+            Log.Information("Finished..");
+            Log.CloseAndFlush();
         }
     }
-}
+        
+    private static IConfigurationRoot BuildConfiguration()
+    {
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", false, true)
+            //.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", false, true)
+            .Build();
+            
+        Log.Logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(configuration)
+            .CreateBootstrapLogger();
+            
+        Log.Information("Starting..");
 
+        return configuration;
+    }
+
+    private static ServiceProvider BuildServiceProvider(IConfigurationRoot configuration)
+    {
+        var services = new ServiceCollection();
+        ConfigureServices(services, configuration);
+        var serviceProvider = services.BuildServiceProvider();
+        return serviceProvider;
+    }
+
+    private static void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
+    {
+        services
+            .AddSingleton<DataPopulatorApplication>()
+            .AddApplication()
+            .AddInfrastructure(configuration);
+    }
+}
