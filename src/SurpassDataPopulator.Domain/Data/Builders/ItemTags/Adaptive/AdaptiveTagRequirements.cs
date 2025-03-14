@@ -30,15 +30,16 @@ public class AdaptiveTagRequirements : ITagRequirements
     {
         return item.Difficulty switch
         {
-            Difficulty.Easy => (ThreadSafeRandom.ThisThreadsRandom.Next(0, 3) + double.Parse(GetRandomDouble())).ToString(CultureInfo.InvariantCulture),
-            Difficulty.Medium => (ThreadSafeRandom.ThisThreadsRandom.Next(3, 7) + double.Parse(GetRandomDouble())).ToString(CultureInfo.InvariantCulture),
-            Difficulty.Hard => (ThreadSafeRandom.ThisThreadsRandom.Next(7, 10) + double.Parse(GetRandomDouble())).ToString(CultureInfo.InvariantCulture),
+            Difficulty.Easy => GetFormattedDifficulty(0, 3),
+            Difficulty.Medium => GetFormattedDifficulty(3, 7),
+            Difficulty.Hard => GetFormattedDifficulty(7, 10),
             _ => throw new ArgumentOutOfRangeException(nameof(item.Difficulty))
         };
     }
 
-    private static string GetRandomDouble()
+    private static string GetFormattedDifficulty(int min, int max)
     {
-        return ThreadSafeRandom.ThisThreadsRandom.NextDouble().ToString("F5", CultureInfo.InvariantCulture);
+        var randomValue = ThreadSafeRandom.ThisThreadsRandom.Next(min, max) + ThreadSafeRandom.ThisThreadsRandom.NextDouble();
+        return randomValue.ToString("F5", CultureInfo.InvariantCulture);
     }
 }
