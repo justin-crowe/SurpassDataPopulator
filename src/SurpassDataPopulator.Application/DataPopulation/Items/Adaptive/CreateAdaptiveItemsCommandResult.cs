@@ -33,7 +33,7 @@ public class CreateAdaptiveItemsCommandResult : CommandResult<CreateAdaptiveItem
     {
         var categoryText = categories > 1
             ? $"{categories} categories"
-            : "unknown category";
+            : "all categories";
 
         var message = $"Successfully created {totalItems} items in {categoryText}";
         if (isAdaptive)

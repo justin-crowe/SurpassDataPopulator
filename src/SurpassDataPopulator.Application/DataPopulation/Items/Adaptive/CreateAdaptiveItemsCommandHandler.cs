@@ -45,7 +45,6 @@ public class CreateAdaptiveItemsCommandHandler : IRequestHandler<CreateAdaptiveI
         _progressContext.ReportStatus($"Generating items...");
         var generatedItems = await GenerateAdaptiveItems(request);
 
-        _progressContext.ReportStatus("Adding media to items...");
         AddMediaToItems(request, generatedItems);
 
         _progressContext.ReportStatus("Adding adaptive content and variants...");
@@ -53,8 +52,6 @@ public class CreateAdaptiveItemsCommandHandler : IRequestHandler<CreateAdaptiveI
 
         _progressContext.ReportStatus($"Importing {generatedItems.Items.Count} items to Surpass...");
         await _surpassApiServiceFactory.GetService().CreateItemsAsync(generatedItems.Items, request.SubjectRef);
-
-        _progressContext.ReportStatus("Finalizing...");
 
         var result = CreateAdaptiveItemsCommandResult.CreateSuccess(
             generatedItems.Items.Count,
@@ -73,6 +70,8 @@ public class CreateAdaptiveItemsCommandHandler : IRequestHandler<CreateAdaptiveI
     private void AddMediaToItems(CreateAdaptiveItemsCommand request, ItemBuildResult generatedItems)
     {
         if (request.MediaFolder == null) return;
+
+        _progressContext.ReportStatus("Adding media to items...");
 
         var imageNames = _fileStorage.GetFiles(request.MediaFolder, SupportedImageFileTypes.FileTypes);
         var images = imageNames.ToDictionary(imageName => imageName, imageName => _fileStorage.ReadAllBytes(imageName));

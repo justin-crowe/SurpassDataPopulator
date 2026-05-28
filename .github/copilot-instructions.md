@@ -1,7 +1,7 @@
 # SurpassDataPopulator Copilot Instructions
 
 ## Project Overview
-A .NET console application for populating Surpass assessment platform instances with test data. Uses Clean Architecture with CQRS/MediatR pattern, integrating with Surpass API and Open Trivia Api for generating assessment items.
+A .NET console application for populating Surpass assessment platform instances with test data. Uses Clean Architecture with CQRS/MediatR pattern, integrating with Surpass API and Open Trivia Api for generating assessment items. Use Spectre console for any ui rendering
 
 ## Architecture Pattern
 Follow **Clean Architecture** with these layers:
