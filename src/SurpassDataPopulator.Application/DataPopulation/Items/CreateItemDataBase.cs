@@ -1,0 +1,16 @@
+﻿using System.Collections.Generic;
+using SurpassDataPopulator.Domain.Data.Builders.ItemTags;
+
+namespace SurpassDataPopulator.Application.DataPopulation.Items;
+
+public abstract class CreateItemDataBase
+{
+    public string SubjectRef { get; set; }
+    public int NumberOfQuestions { get; set; }
+    public IEnumerable<int> Category { get; set; }
+    public bool ShowCorrectAnswer { get; set; }
+    public IEnumerable<TagRequest> Tags { get; set; }
+    public string MediaFolder { get; set; }
+    public int NumberOfMediaItemsPerItem { get; set; }
+    public bool FixedNumberOfMediaPerItem { get; set; }
+}

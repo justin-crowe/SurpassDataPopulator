@@ -1,0 +1,32 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "CreateAdaptiveItems 200": {
+      "commandName": "Project",
+      "commandLineArgs": "createAdaptiveItems -s \"ref\" -n 200"
+    },
+    "CreateAdaptiveItems 10": {
+      "commandName": "Project",
+      "commandLineArgs": "createAdaptiveItems -s \"ref\" -n 10"
+    },
+    "regression - Login": {
+      "commandName": "Project",
+      "commandLineArgs": "login -i \"https://regression.surpass-preview.com//\" -u \"user\" -p \"\""
+    },
+    "localhost - Login": {
+      "commandName": "Project",
+      "commandLineArgs": "login -i \"http://localhost.surpass.com:55518/\" -u \"user\" -p \"\""
+    },
+    "Logout": {
+      "commandName": "Project",
+      "commandLineArgs": "logout"
+    },
+    "CreateAdaptiveItems 200 - WithVariants en we ": {
+      "commandName": "Project",
+      "commandLineArgs": "createAdaptiveItems -s \"ref\" -n 200 --variants en we"
+    }
+  }
+}
