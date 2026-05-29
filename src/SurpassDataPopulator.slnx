@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Tests/">
+    <Project Path="tests/SurpassDataPopulator.Application.IntegrationTests/SurpassDataPopulator.Application.IntegrationTests.csproj" />
+  </Folder>
+  <Project Path="SurpassDataPopulator.Application/SurpassDataPopulator.Application.csproj" />
+  <Project Path="SurpassDataPopulator.Console/SurpassDataPopulator.Console.csproj" />
+  <Project Path="SurpassDataPopulator.Domain/SurpassDataPopulator.Domain.csproj" />
+  <Project Path="SurpassDataPopulator.Infrastructure.SurpassApiSdk/SurpassDataPopulator.Infrastructure.SurpassApiSdk.csproj" />
+  <Project Path="SurpassDataPopulator.Infrastructure/SurpassDataPopulator.Infrastructure.csproj" />
+</Solution>
