@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SurpassDataPopulator.Application;
 using SurpassDataPopulator.Application.Authentication.Login;
@@ -13,7 +13,9 @@ using SurpassDataPopulator.Console.Cli.Verbs.Create.Items.Adaptive;
 using SurpassDataPopulator.Console.Display.Mappers;
 using SurpassDataPopulator.Infrastructure;
 using MediatR;
+using SurpassDataPopulator.Application.Authentication.Status;
 using SurpassDataPopulator.Console.Behaviours;
+using SurpassDataPopulator.Console.Cli.Verbs.Authorization.Status;
 
 namespace SurpassDataPopulator.Console;
 
@@ -42,6 +44,7 @@ public static class DependencyInjection
         // Register console output generators for Spectre.Console
         services.AddScoped<IConsoleAppResultOutput<LoginCommandResult>, LoginResultOutput>();
         services.AddScoped<IConsoleAppResultOutput<LogoutCommandResult>, LogoutResultOutput>();
+        services.AddScoped<IConsoleAppResultOutput<StatusCommandResult>, StatusResultOutput>();
         services.AddScoped<IConsoleAppResultOutput<CreateItemDataResult>, CreateItemsResultOutput>();
         services.AddScoped<IConsoleAppResultOutput<CreateAdaptiveItemsCommandResult>, CreateAdaptiveItemsResultOutput>();
     }

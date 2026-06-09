@@ -31,7 +31,6 @@
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <None Remove="Cli\Options\**" />
       <None Remove="Logs\**" />
     </ItemGroup>
 
@@ -39,17 +38,6 @@
       <ProjectReference Include="..\SurpassDataPopulator.Application\SurpassDataPopulator.Application.csproj" />
       <ProjectReference Include="..\SurpassDataPopulator.Domain\SurpassDataPopulator.Domain.csproj" />
       <ProjectReference Include="..\SurpassDataPopulator.Infrastructure\SurpassDataPopulator.Infrastructure.csproj" />
-    </ItemGroup>
-
-	<ItemGroup>
-		<Compile Remove="Cli\Options\**" />
-		<Compile Remove="Logs\**" />
-	</ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="Cli\Options\**" />
-      <EmbeddedResource Remove="Cli\Verbs\NewFolder\**" />
-      <EmbeddedResource Remove="Logs\**" />
     </ItemGroup>
 
 </Project>

@@ -20,7 +20,10 @@ public class LogoutCommandResult : CommandResult<LogoutCommandResult>
 
     public static LogoutCommandResult CreateNotLoggedIn(string username)
     {
-        var message = $"Logout failed, no active session found for {username}. Please log in first.";
+        var message = username != null ?
+            $"Logout failed, no active session found for {username}. Please log in first."
+            : "Logout failed, no active session found. Please log in first.";
+
         return CreateFailure(new Exception(message), result =>
         {
             result.Username = string.Empty;

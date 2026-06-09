@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,8 @@ public static class DependencyInjection
 
         var jsonOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
         {
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
         };
         var refitSettings = new RefitSettings(new SystemTextJsonContentSerializer(jsonOptions));
         //See the SurpassApiServiceFactory for further refit setup as we need to set base address at runtime which cannot be done in the DI setup

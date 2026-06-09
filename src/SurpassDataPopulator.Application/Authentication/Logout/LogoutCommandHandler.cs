@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using SurpassDataPopulator.Application.Common.Progress;
 using SurpassDataPopulator.Application.Interfaces.Services;
@@ -26,7 +26,13 @@ public class LogoutCommandHandler : IRequestHandler<LogoutCommand, LogoutCommand
     public Task<LogoutCommandResult> Handle(LogoutCommand request, CancellationToken cancellationToken)
     {
         var currentCredentials = _credentialsStore.Load();
-        var username = currentCredentials?.Username;
+
+        if (currentCredentials == null)
+        {
+            return Task.FromResult(LogoutCommandResult.CreateNotLoggedIn(null));
+        }
+
+        var username = currentCredentials.Username;
         
         _credentialsStore.Delete();
         _logger.LogInformation("Logged out of Surpass.");

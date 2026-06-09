@@ -1,4 +1,5 @@
-﻿using System.CommandLine;
+using System.CommandLine;
+using Spectre.Console;
 using SurpassDataPopulator.Application.Authentication.Login;
 using SurpassDataPopulator.Console.Display.Mappers;
 
@@ -11,15 +12,24 @@ public class Login : Command
     {
         var urlOption = new Option<string>(["--url", "--instance", "-i"], "Surpass Instance URL - EG: https://customer.surpass.com") { IsRequired = true };
         var userOption = new Option<string>(["--user", "--username", "-u"], "Username") { IsRequired = true };
-        var passOption = new Option<string>(["--pass", "--password", "-p"], "Password") { IsRequired = true, IsHidden = true};
+        var passOption = new Option<string?>(["--pass", "--password", "-p"], "Password (will prompt securely if not provided)") { IsRequired = false, IsHidden = true};
 
         AddOption(urlOption);
         AddOption(userOption);
         AddOption(passOption);
 
         this.SetHandler(
-            async (string url, string user, string password, ProgressAwareSender sender) =>
+            async (string url, string user, string? password, ProgressAwareSender sender) =>
             {
+                // Prompt for password securely if not provided via command line
+                if (string.IsNullOrWhiteSpace(password))
+                {
+                    password = AnsiConsole.Prompt(
+                        new TextPrompt<string>("Enter [green]password[/]:")
+                            .PromptStyle("red")
+                            .Secret());
+                }
+
                 var result = await sender.SendWithProgressAsync<LoginCommandResult>(
                     new LoginCommand(url, user, password),
                     "Logging into Surpass...");

@@ -1,14 +1,16 @@
-﻿using System;
+using System;
 using System.CommandLine;
 using System.CommandLine.Builder;
 using System.CommandLine.Parsing;
 using Microsoft.Extensions.DependencyInjection;
 using SurpassDataPopulator.Application.Authentication.Login;
 using SurpassDataPopulator.Application.Authentication.Logout;
+using SurpassDataPopulator.Application.Authentication.Status;
 using SurpassDataPopulator.Application.DataPopulation.Items;
 using SurpassDataPopulator.Application.DataPopulation.Items.Adaptive;
 using SurpassDataPopulator.Console.Cli.Verbs.Authorization.Login;
 using SurpassDataPopulator.Console.Cli.Verbs.Authorization.Logout;
+using SurpassDataPopulator.Console.Cli.Verbs.Authorization.Status;
 using SurpassDataPopulator.Console.Cli.Verbs.Create.Items;
 using SurpassDataPopulator.Console.Display.Mappers;
 using ConsoleCreateAdaptiveItems = SurpassDataPopulator.Console.Cli.Verbs.Create.Items.Adaptive.CreateAdaptiveItems;
@@ -27,11 +29,14 @@ public class CommandFactory
         var progressMediatrService = provider.GetRequiredService<ProgressAwareMediatrBinder>();
         var loginDisplayMapper = provider.GetRequiredService<IConsoleAppResultOutput<LoginCommandResult>>();
         var logoutDisplayMapper = provider.GetRequiredService<IConsoleAppResultOutput<LogoutCommandResult>>();
+        var statusResultOutput = provider.GetRequiredService<IConsoleAppResultOutput<StatusCommandResult>>();
+
         var createItemsResultOutput = provider.GetRequiredService<IConsoleAppResultOutput<CreateItemDataResult>>();
         var createAdaptiveItemsResultOutput = provider.GetRequiredService<IConsoleAppResultOutput<CreateAdaptiveItemsCommandResult>>();
         
         rootCommand.AddCommand(new Login(progressMediatrService, loginDisplayMapper));
         rootCommand.AddCommand(new Logout(progressMediatrService, logoutDisplayMapper));
+        rootCommand.AddCommand(new Status(progressMediatrService, statusResultOutput));
         
         rootCommand.AddCommand(new CreateItems(progressMediatrService, createItemsResultOutput));
         rootCommand.AddCommand(new ConsoleCreateAdaptiveItems(progressMediatrService, createItemsResultOutput, createAdaptiveItemsResultOutput));

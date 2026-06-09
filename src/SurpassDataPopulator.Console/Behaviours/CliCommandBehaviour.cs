@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading;
@@ -118,11 +119,7 @@ public class CliCommandBehaviour<TRequest, TResponse> : IPipelineBehavior<TReque
     private async Task RenderAndPersistTodosAsync(List<string> todos, CancellationToken cancellationToken)
     {
         // Create numbered list for display
-        var numberedTodos = new List<string>();
-        for (int i = 0; i < todos.Count; i++)
-        {
-            numberedTodos.Add($"{i + 1}. {todos[i]}");
-        }
+        var numberedTodos = todos.Select((t, i) => $"{i + 1}. {t}").ToList();
 
         // Create panel with todos
         var todoList = string.Join("\n", numberedTodos);
