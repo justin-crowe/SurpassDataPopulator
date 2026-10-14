@@ -1,10 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net10.0</TargetFramework>
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
         <RootNamespace>SurpassDataPopulator.Console</RootNamespace>
+        <AssemblyName>spsd</AssemblyName>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>spsd</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageId>SurpassDataPopulator.Console</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Justin Crowe</Authors>
+        <Description>CLI tool for populating Surpass assessment platform instances with test data.</Description>
+        <PackageTags>surpass;cli;tool</PackageTags>
+        <RepositoryUrl>https://github.com/justin-crowe/SurpassDataPopulator</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +27,7 @@
       <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
       <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
       <PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
+      <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
       <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
       <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
       <PackageReference Include="Spectre.Console" Version="0.49.1" />
@@ -25,11 +36,14 @@
 
     <ItemGroup>
       <None Remove="appsettings.json" />
-      <Content Include="appsettings.Development.json.json">
+      <Content Include="appsettings.Development.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Pack>false</Pack>
       </Content>
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <Pack>true</Pack>
+        <PackagePath>tools/net10.0/any/</PackagePath>
       </Content>
       <None Remove="Logs\**" />
     </ItemGroup>

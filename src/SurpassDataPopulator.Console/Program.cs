@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.CommandLine.Parsing;
 using System.IO;
 using Microsoft.Extensions.Configuration;
@@ -9,10 +9,10 @@ using SurpassDataPopulator.Console;
 using SurpassDataPopulator.Console.Cli;
 
 var host = new HostBuilder()
-    .UseContentRoot(Directory.GetCurrentDirectory())
+    .UseContentRoot(AppContext.BaseDirectory)
     .ConfigureAppConfiguration((hostingContext, config) =>
     {
-        config.SetBasePath(Directory.GetCurrentDirectory());
+        config.SetBasePath(AppContext.BaseDirectory);
         config.AddEnvironmentVariables();
         config.AddJsonFile("appsettings.json", true);
 #if DEBUG
