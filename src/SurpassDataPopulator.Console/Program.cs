@@ -59,6 +59,5 @@ finally
 
 void Print(string message)
 {
-    AnsiConsole.WriteLine(message);
     Log.Logger.Information(message);
 }
