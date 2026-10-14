@@ -1,6 +1,5 @@
 using System;
 using System.CommandLine.Parsing;
-using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
@@ -28,6 +27,9 @@ var host = new HostBuilder()
         var logger = new LoggerConfiguration()
             .ReadFrom.Configuration(hostingContext.Configuration)
             .Enrich.FromLogContext()
+            .Enrich.WithProperty("InstallId", InstallIdentity.InstallId)
+            .Enrich.WithProperty("ToolVersion", InstallIdentity.ToolVersion)
+            .Enrich.WithProperty("UserName", Environment.UserName)
             .CreateLogger();
         Log.Logger = logger;
         logging.AddSerilog(logger);
@@ -59,5 +61,5 @@ finally
 
 void Print(string message)
 {
-    Log.Logger.Information(message);
+    AnsiConsole.Write(message);
 }
